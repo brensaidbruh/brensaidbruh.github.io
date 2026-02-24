@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Coffee Recipes | The Brew Notebook</title>
+    <meta name="description"
+        content="Explore espresso, latte, mocha, cold brew and special signature coffee recipes from The Brew Notebook.">
+    <meta name="keywords"
+        content="espresso recipe, americano, latte, mocha, cold brew, dirty latte, hojicha latte, affogato, yuzu coffee">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>The Brew Notebook</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="recipes.html">Recipes</a>
+            <a href="brewing.html">Brewing Guide</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <section>
+        <h2 style="text-align:center;">Classic Brews</h2>
+
+        <div class="recipe-grid">
+
+            <!-- Espresso -->
+            <div class="recipe-card" onclick="toggleRecipe(this)">
+                <img src="images/espresso.jpg" alt="Fresh espresso shot in small ceramic cup">
+                <h3>Espresso</h3>
+                <div class="recipe-content">
+                    <h4>Ingredients</h4>
+                    <ul>
+                        <li>18g finely ground coffee</li>
+                    </ul>
+                    <h4>Steps</h4>
+                    <ol>
+                        <li>Tamp coffee grounds evenly.</li>
+                        <li>Extract for 25–30 seconds.</li>
+                        <li>Serve immediately.</li>
+                    </ol>
+                </div>
+            </div>
+
+            <!-- Americano -->
+            <div class="recipe-card" onclick="toggleRecipe(this)">
+                <img src="images/americano.jpg" alt="Black coffee americano in glass cup">
+                <h3>Americano (black coffee)</h3>
+                <div class="recipe-content">
+                    <h4>Ingredients</h4>
+                    <ul>
+                        <li>1 double espresso (40g)</li>
+                        <li>Hot water</li>
+                    </ul>
+                    <h4>Steps</h4>
+                    <ol>
+                        <li>Pull espresso shot.</li>
+                        <li>Add 150ml hot water.</li>
+                        <li>Serve warm.</li>
+                    </ol>
+                </div>
+            </div>
+
+            <!-- Latte -->
+            <div class="recipe-card" onclick="toggleRecipe(this)">
+                <img src="images/latte.jpg" alt="Creamy white coffee latte with milk foam">
+                <h3>Coffee latte (white coffe)</h3>
+                <div class="recipe-content">
+                    <h4>Ingredients</h4>
+                    <ul>
+                        <li>1 double espresso (40g)</li>
+                        <li>200ml steamed milk</li>
+                    </ul>
+                    <h4>Steps</h4>
+                    <ol>
+                        <li>Prepare espresso.</li>
+                        <li>Steam milk until silky.</li>
+                        <li>Pour milk over espresso.</li>
+                    </ol>
+                </div>
+            </div>
+
+            <!-- Mocha -->
+            <div class="recipe-card" onclick="toggleRecipe(this)">
+                <img src="images/mocha.jpg" alt="Chocolate mocha coffee topped with cocoa powder">
+                <h3>Mocha</h3>
+                <div class="recipe-content">
+                    <h4>Ingredients</h4>
+                    <ul>
+                        <li>1 double espresso (40g)</li>
+                        <li>10g cacao powder</li>
+                        <li>15g sugar syrup</li>
+                        <li>200ml steamed milk</li>
+                    </ul>
+                    <h4>Steps</h4>
+                    <ol>
+                        <li>Mix cacao powder and sugar with espresso.</li>
+                        <li>Add steamed milk.</li>
+                        <li>Top with cocoa powder.</li>
+                    </ol>
+                </div>
+            </div>
+
+            <!-- Cold Brew -->
+            <div class="recipe-card" onclick="toggleRecipe(this)">
+                <img src="images/coldbrew.jpg" alt="Cold brew coffee with ice in tall glass">
+                <h3>Cold Brew</h3>
+                <div class="recipe-content">
+                    <h4>Ingredients</h4>
+                    <ul>
+                        <li>100g coarse coffee grounds</li>
+                        <li>1000g cold water</li>
+                    </ul>
+                    <h4>Steps</h4>
+                    <ol>
+                        <li>Mix coffee with water.</li>
+                        <li>Steep 12–18 hours in fridge.</li>
+                        <li>Strain and serve over ice.</li>
+                    </ol>
+                </div>
+            </div>
+
+            <!-- Dirty Latte -->
+            <div class="recipe-card" onclick="toggleRecipe(this)">
+                <img src="images/dirtylatte.jpg" alt="Dirty latte with espresso layered over milk">
+                <h3>Dirty Latte</h3>
+                <div class="recipe-content">
+                    <h4>Ingredients</h4>
+                    <ul>
+                        <li>Cold milk</li>
+                        <li>1 double espresso (40g)</li>
+                    </ul>
+                    <h4>Steps</h4>
+                    <ol>
+                        <li>Fill cold glass with cold milk.</li>
+                        <li>Slowly extract espresso over milk.</li>
+                        <li>Serve layered.</li>
+                    </ol>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section>
+        <h2 style="text-align:center; margin-top:60px;">⭐ Special Brew</h2>
+
+        <div class="recipe-grid">
+
+            <!-- Hojicha Latte -->
+            <div class="recipe-card" onclick="toggleRecipe(this)">
+                <img src="images/hojicha.jpg" alt="Hojicha latte with roasted tea flavor">
+                <h3>Hojicha Latte</h3>
+                <div class="recipe-content">
+                    <h4>Ingredients</h4>
+                    <ul>
+                        <li>5g hojicha powder</li>
+                        <li>150ml milk</li>
+                        <li>Sweetener (optional)</li>
+                    </ul>
+                    <h4>Steps</h4>
+                    <ol>
+                        <li>Whisk hojicha and sweetener with warm water.</li>
+                        <li>Add steamed milk.</li>
+                    </ol>
+                </div>
+            </div>
+
+            <!-- Affogato -->
+            <div class="recipe-card" onclick="toggleRecipe(this)">
+                <img src="images/affogato.jpg" alt="Affogato dessert with espresso over vanilla ice cream">
+                <h3>Affogato</h3>
+                <div class="recipe-content">
+                    <h4>Ingredients</h4>
+                    <ul>
+                        <li>1 scoop vanilla ice cream</li>
+                        <li>1 single shot espresso (20g)</li>
+                    </ul>
+                    <h4>Steps</h4>
+                    <ol>
+                        <li>Place ice cream in cup.</li>
+                        <li>Pour hot espresso over.</li>
+                        <li>Serve immediately.</li>
+                    </ol>
+                </div>
+            </div>
+
+            <!-- Yuzu Sparkling Coffee -->
+            <div class="recipe-card" onclick="toggleRecipe(this)">
+                <img src="images/yuzu.jpg" alt="Yuzu sparkling coffee with citrus slice">
+                <h3>Yuzu Sparkling Coffee</h3>
+                <div class="recipe-content">
+                    <h4>Ingredients</h4>
+                    <ul>
+                        <li>1 double espresso (40g)</li>
+                        <li>Yuzu syrup</li>
+                        <li>Sparkling water</li>
+                        <li>Ice</li>
+                    </ul>
+                    <h4>Steps</h4>
+                    <ol>
+                        <li>Fill glass with ice.</li>
+                        <li>Add yuzu syrup and sparkling water.</li>
+                        <li>Top with espresso.</li>
+                    </ol>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 The Brew Notebook | Crafted with Passion</p>
+    </footer>
+
+    <script>
+        function toggleRecipe(card) {
+            const allCards = document.querySelectorAll(".recipe-content");
+            allCards.forEach(content => {
+                if (content !== card.querySelector(".recipe-content")) {
+                    content.style.display = "none";
+                }
+            });
+
+            const content = card.querySelector(".recipe-content");
+            content.style.display = content.style.display === "block" ? "none" : "block";
+        }
+    </script>
+
+</body>
+
+</html>
