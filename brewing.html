@@ -24,92 +24,128 @@
         </nav>
     </header>
 
-    <section>
+    <!-- Short paragraph card -->
+    <div class="intro-card">
+        This guide shares professional insights on coffee brewing, drawing from industry experience. Learn how
+        grind size, extraction time, water temperature, and ratios impact the flavor, balance, and clarity of your
+        coffee.
+    </div>
 
-        <h2 style="text-align:center;">Professional Coffee Brewing Guide</h2>
-        <p style="text-align:center;">Understanding extraction variables improves consistency, flavor clarity, and
-            balance.</p>
+    <section class="brewing-section">
 
-        <div class="recipe-card no-hover">
-            <h3>1. Core Brewing Variables</h3>
-            <ul>
-                <li><strong>Grind Size:</strong> Controls extraction speed.</li>
-                <li><strong>Water Temperature:</strong> Ideal range: 90–96°C.</li>
-                <li><strong>Brew Ratio:</strong> Coffee to water proportion.</li>
-                <li><strong>Time:</strong> Directly impacts strength and bitterness.</li>
-            </ul>
+        <!-- Step 1: Text Left, Image Right -->
+        <div class="brew-row">
+            <div class="brew-text">
+                <h3>1. Core Brewing Variables</h3>
+                <ul>
+                    <li><strong>Grind Size:</strong> Controls extraction speed.</li>
+                    <li><strong>Water Temperature:</strong> Ideal range: 90–96°C.</li>
+                    <li><strong>Brew Ratio:</strong> Coffee to water proportion.</li>
+                    <li><strong>Time:</strong> Directly impacts strength and bitterness.</li>
+                </ul>
+            </div>
+            <div class="brew-image">
+                <img src="images/core-variables.jpg" alt="Coffee brewing variables">
+            </div>
         </div>
 
-        <div class="recipe-card no-hover">
-            <h3>2. Brew Ratios Reference</h3>
-            <ul>
-                <li>Espresso: 1:2 (18g coffee → 36g yield)</li>
-                <li>Pour Over: 1:15 to 1:17</li>
-                <li>French Press: 1:15</li>
-                <li>Cold Brew: 1:5 concentrate (dilute before serving)</li>
-            </ul>
+        <!-- Step 2: Image Left, Text Right -->
+        <div class="brew-row reverse">
+            <div class="brew-image">
+                <img src="images/brew-ratio.jpg" alt="Brew ratios guide">
+            </div>
+            <div class="brew-text">
+                <h3>2. Brew Ratios Reference</h3>
+                <ul>
+                    <li>Espresso: 1:2 (18g → 36g)</li>
+                    <li>Pour Over: 1:15 to 1:17</li>
+                    <li>French Press: 1:15</li>
+                    <li>Cold Brew: 1:5 concentrate (dilute before serving)</li>
+                </ul>
+            </div>
         </div>
 
-        <div class="recipe-card no-hover">
-            <h3>3. Espresso Extraction</h3>
-            <p>
-                Espresso is brewed under 9 bars of pressure with a fine grind size.
-                Standard extraction time is 25–30 seconds.
-            </p>
-            <ul>
-                <li>Dose: 18–20g</li>
-                <li>Yield: 36–40g</li>
-                <li>Extraction: 25–30 seconds</li>
-            </ul>
+        <!-- Step 3: Text Left, Image Right -->
+        <div class="brew-row">
+            <div class="brew-text">
+                <h3>3. Espresso Extraction</h3>
+                <p>Espresso is brewed under 9 bars of pressure with a fine grind. Standard extraction: 25–30 sec.</p>
+                <ul>
+                    <li>Dose: 18–20g</li>
+                    <li>Yield: 36–40g</li>
+                    <li>Extraction: 25–30 sec</li>
+                </ul>
+            </div>
+            <div class="brew-image">
+                <img src="images/espresso.jpg" alt="Espresso shot">
+            </div>
         </div>
 
-        <div class="recipe-card no-hover">
-            <h3>4. Manual Brewing (Pour Over)</h3>
-            <p>
-                Pour over allows full control of bloom and flow rate.
-            </p>
-            <ul>
-                <li>Grind: Medium</li>
-                <li>Bloom: 30–45 seconds</li>
-                <li>Total brew time: 3–4 minutes</li>
-                <li>Water temp: 92–94°C</li>
-            </ul>
+        <!-- Step 4: Image Left, Text Right -->
+        <div class="brew-row reverse">
+            <div class="brew-image">
+                <img src="images/pourover.jpg" alt="Pour over brewing">
+            </div>
+            <div class="brew-text">
+                <h3>4. Manual Brewing (Pour Over)</h3>
+                <p>Pour over allows full control of bloom and flow rate.</p>
+                <ul>
+                    <li>Grind: Medium</li>
+                    <li>Bloom: 30–45 seconds</li>
+                    <li>Total brew time: 3–4 minutes</li>
+                    <li>Water temp: 92–94°C</li>
+                </ul>
+            </div>
         </div>
 
-        <div class="recipe-card no-hover">
-            <h3>5. Immersion Brewing (French Press)</h3>
-            <ul>
-                <li>Grind: Coarse</li>
-                <li>Steep time: 4 minutes</li>
-                <li>Press gently to avoid over extraction</li>
-            </ul>
+        <!-- Step 5: Text Left, Image Right -->
+        <div class="brew-row">
+            <div class="brew-text">
+                <h3>5. Immersion Brewing (French Press)</h3>
+                <ul>
+                    <li>Grind: Coarse</li>
+                    <li>Steep time: 4 minutes</li>
+                    <li>Press gently to avoid over extraction</li>
+                </ul>
+            </div>
+            <div class="brew-image">
+                <img src="images/frenchpress.jpg" alt="French press brewing">
+            </div>
         </div>
 
-        <div class="recipe-card no-hover">
-            <h3>6. Cold Brew Extraction</h3>
-            <p>
-                Cold brew uses time instead of temperature for extraction.
-            </p>
-            <ul>
-                <li>Grind: Coarse</li>
-                <li>Ratio: 1:5 concentrate</li>
-                <li>Steep: 12–18 hours (room temperature or refrigerated)</li>
-            </ul>
+        <!-- Step 6: Image Left, Text Right -->
+        <div class="brew-row reverse">
+            <div class="brew-image">
+                <img src="images/coldbrew.jpg" alt="Cold brew coffee">
+            </div>
+            <div class="brew-text">
+                <h3>6. Cold Brew Extraction</h3>
+                <p>Cold brew uses time instead of temperature for extraction.</p>
+                <ul>
+                    <li>Grind: Coarse</li>
+                    <li>Ratio: 1:5 concentrate</li>
+                    <li>Steep: 12–18 hours (room temperature or refrigerated)</li>
+                </ul>
+            </div>
         </div>
 
-        <div class="recipe-card no-hover">
-            <h3>7. Understanding Extraction Balance</h3>
-            <p>
-                Under-extracted coffee tastes sour and thin.
-                Over-extracted coffee tastes bitter and dry.
-                Proper extraction results in sweetness, balance, and clarity.
-            </p>
+        <!-- Step 7: Text Left, Image Right -->
+        <div class="brew-row">
+            <div class="brew-text">
+                <h3>7. Understanding Extraction Balance</h3>
+                <p>Under-extracted coffee tastes sour and thin. Over-extracted coffee tastes bitter and dry. Proper
+                    extraction
+                    results in sweetness, balance, and clarity.</p>
+            </div>
+            <div class="brew-image">
+                <img src="images/extraction-balance.jpg" alt="Coffee extraction balance">
+            </div>
         </div>
 
     </section>
 
     <footer>
-        <p>© 2026 The Brew Notebook | Crafted with Precision</p>
+        <p>© 2026 The BrewBook | Crafted with Precision</p>
     </footer>
 
 </body>

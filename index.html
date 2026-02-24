@@ -22,27 +22,181 @@
 </script>
 
 <body>
+
+    <!-- HEADER -->
     <header>
-        <h1>The Brew Notebook</h1>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="recipes.html">Recipes</a>
-            <a href="brewing.html">Brewing guides</a>
-            <a href="about.html">About</a>
-            <a href="contact.html">Contact</a>
-        </nav>
+        <div class="header-inner">
+            <h1>The BrewBook</h1>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="recipes.html">Recipes</a>
+                <a href="brewing.html">Brewing</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
     </header>
 
-    <section class="main">
-        <img src="images/main.jpg" alt="Freshly brewed coffee on table">
-        <h2>Simple Coffee Recipes & Brewing Inspiration</h2>
-        <p>Discover easy homemade coffee drinks and brewing tips inspired by real barista experience.</p>
-        <a href="recipes.html" class="button">Explore recipes</a>
+    <section class="hero-wrapper">
+
+        <div class="hero-container">
+
+            <!-- LEFT: Carousel -->
+            <div class="hero-carousel">
+                <button class="arrow left">&#10094;</button>
+
+                <div class="carousel-track">
+                    <div class="slide active">
+                        <img src="images/home/coffee_home_latte_tulip.jpg" alt="Latte art tulip design">
+                    </div>
+                    <div class="slide">
+                        <img src="images/home/coffee_home_pour_over.jpg" alt="Pour over coffee">
+                    </div>
+                    <div class="slide">
+                        <img src="images/home/coffee_home_machine.jpg" alt="Coffee coffee_home_machine">
+                    </div>
+                    <div class="slide">
+                        <img src="images/home/coffee_home_espresso.jpg" alt="Espresso">
+                    </div>
+                    <div class="slide">
+                        <img src="images/home/coffee_home_pour_latte.jpg" alt="Pour latte">
+                    </div>
+                    <div class="slide">
+                        <img src="images/home/coffee_home_extract.jpg" alt="Coffee extract">
+                    </div>
+                </div>
+
+                <button class="arrow right">&#10095;</button>
+            </div>
+
+            <!-- RIGHT: Text -->
+            <div class="hero-text">
+                <h2>Simple Coffee. Intentional Moments.</h2>
+                <p>
+                    The BrewBook is a space for everyday coffee rituals.
+                    Whether you're brewing before class or slowing down on a Sunday morning,
+                    coffee should feel warm, personal and inspiring.
+                </p>
+                <a href="recipes.html" class="button">Explore Recipes</a>
+            </div>
+
+        </div>
+
     </section>
 
+    <!-- HERO -->
+    <section class="section light reveal">
+        <h2>Simple Coffee Recipes & Brewing Inspiration</h2>
+        <p>
+            Discover homemade coffee drinks, minimalist brewing guides,
+            and barista-inspired ideas for everyday coffee lovers.
+        </p>
+    </section>
+
+    <!-- WEBSITE PURPOSE -->
+    <section class="section reveal">
+        <h2>Why The BrewBook Exists</h2>
+        <p>
+            This website was created to make coffee simple and approachable.
+            Many people love coffee but feel intimidated by complicated recipes
+            or expensive equipment.
+        </p>
+        <p>
+            The BrewBook focuses on minimalist brewing, affordable ingredients,
+            and easy step-by-step guidance — perfect for students, beginners,
+            and anyone who simply enjoys a good cup.
+        </p>
+    </section>
+
+    <!-- HISTORY SECTION -->
+    <section class="section light reveal">
+        <h2>The Story of Coffee</h2>
+        <p>
+            Coffee's journey began in Ethiopia, where legend tells of a goat herder
+            discovering the energizing effects of coffee cherries.
+            From Yemen to Europe and eventually across the globe,
+            coffee became a cultural cornerstone.
+        </p>
+        <p>
+            Today, each brewing method — whether French press, espresso, or pour-over —
+            represents a different chapter in coffee’s evolving story.
+        </p>
+    </section>
+
+    <!-- ORIGIN SECTION -->
+    <section class="section reveal">
+        <h2>From Bean to Brew</h2>
+        <p>
+            Coffee grows along the equatorial “Coffee Belt,” including
+            South America, Africa and Southeast Asia.
+            Climate, soil and altitude shape the flavor of each bean.
+        </p>
+        <p>
+            Understanding origin, roast level and grind size transforms
+            a simple cup into an intentional experience.
+        </p>
+        <p>
+            Different regions produce distinct flavor profiles:
+        </p>
+        <ul>
+            <li><strong>Ethiopia:</strong> Floral, fruity, bright acidity</li>
+            <li><strong>Colombia:</strong> Balanced, caramel sweetness</li>
+            <li><strong>Brazil:</strong> Nutty, chocolate notes</li>
+            <li><strong>Indonesia:</strong> Earthy, bold, low acidity</li>
+        </ul>
+    </section>
+
+    <!-- CALL TO ACTION -->
+    <section class="section center reveal">
+        <h2>Ready to Brew?</h2>
+        <a href="brewing.html" class="button">Start Brewing Guide</a>
+    </section>
+
+    <!-- FOOTER -->
     <footer>
-        <p>© 2026 The Brew Notebook | Crafted with Passion</p>
+        <p>© 2026 The BrewBook</p>
     </footer>
+
+    <!-- SCRIPT -->
+    <script>
+
+        // Scroll Reveal
+        const reveals = document.querySelectorAll(".reveal");
+
+        window.addEventListener("scroll", () => {
+            reveals.forEach(el => {
+                const windowHeight = window.innerHeight;
+                const elementTop = el.getBoundingClientRect().top;
+
+                if (elementTop < windowHeight - 100) {
+                    el.classList.add("active");
+                }
+            });
+        });
+
+        // Slider Logic
+        const slides = document.querySelectorAll(".slide");
+        const nextBtn = document.querySelector(".right");
+        const prevBtn = document.querySelector(".left");
+
+        let currentSlide = 0;
+
+        function showSlide(index) {
+            slides.forEach(slide => slide.classList.remove("active"));
+            slides[index].classList.add("active");
+        }
+
+        nextBtn.addEventListener("click", () => {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        });
+
+        prevBtn.addEventListener("click", () => {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(currentSlide);
+        });
+
+    </script>
 
 </body>
 

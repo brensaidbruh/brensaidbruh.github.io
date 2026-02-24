@@ -1,102 +1,165 @@
-/* Color Variables */
+/* ============================= */
+/* COLOR PALETTE */
+/* ============================= */
 :root {
     --inkwell: #2C3639;
     --lunar: #3F4E4F;
-    --creme-brulee: #A27B5B;
-    --au-lait: #DCD7C9;
-    --cream: #F5EFE6;
+    --creme: #A27B5B;
+    --light: #F5EFE6;
+    --soft: #EDE6DB;
 }
 
-/* Global */
+/* ============================= */
+/* GLOBAL */
+/* ============================= */
 body {
-    font-family: 'Segoe UI', sans-serif;
     margin: 0;
-    background-color: var(--cream);
+    font-family: 'Segoe UI', sans-serif;
+    background: var(--light);
     color: var(--inkwell);
-    line-height: 1.6;
+    line-height: 1.8;
+    font-size: 17px;
+    /* ADD THIS */
 }
 
-/* Header */
+/* ============================= */
+/* HEADER */
+/* ============================= */
 header {
-    background-color: var(--inkwell);
+    background: var(--inkwell);
     padding: 25px;
     text-align: center;
 }
 
 header h1 {
-    color: var(--au-lait);
+    color: var(--light);
     margin: 0;
-    font-size: 2rem;
-    letter-spacing: 1px;
+    font-weight: 500;
 }
 
-/* Navigation */
+/* ============================= */
+/* NAVIGATION */
+/* ============================= */
 nav {
-    margin-top: 10px;
-    opacity: 0;
-    transform: translateY(-6px);
-    animation: navFadeIn 0.6s forwards ease-in-out;
-    animation-delay: 0.2s;
-    text-align: center;
-}
-
-@keyframes navFadeIn {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    margin-top: 12px;
 }
 
 nav a {
-    display: inline-block;
-    padding: 6px 12px;
-    /* enough padding for pill shape */
-    margin: 0 6px;
     text-decoration: none;
     color: var(--inkwell);
-    /* dark text for contrast */
-    background-color: var(--cream);
-    /* button background */
-    border-radius: 50px;
-    /* fully rounded / pill shape */
-    font-weight: 500;
-    font-size: 0.95rem;
-    transition: background-color 0.25s ease, transform 0.2s ease, color 0.25s ease;
+    background: var(--light);
+    padding: 6px 14px;
+    margin: 0 6px;
+    border-radius: 40px;
+    font-size: 0.9rem;
+    transition: 0.3s ease;
 }
 
 nav a:hover {
-    background-color: var(--creme-brulee);
-    /* subtle darker hover */
-    color: var(--au-lait);
-    /* text changes for contrast */
-    transform: scale(1.05);
-    /* slight pop effect */
+    background: var(--creme);
+    color: white;
 }
 
-/* Hero Section */
-.hero {
-    background-color: var(--au-lait);
-    text-align: center;
-    padding: 60px 20px;
+/* ============================= */
+/* HERO SECTION */
+/* ============================= */
+.hero-wrapper {
+    padding: 90px 0;
 }
 
-.hero img {
-    width: 80%;
-    max-width: 600px;
-    border-radius: 12px;
-    margin-bottom: 20px;
+.hero-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 70px;
+    padding: 0 20px;
 }
 
-.hero h2 {
-    font-size: 1.8rem;
-    margin-bottom: 10px;
+/* LEFT: CAROUSEL */
+.hero-carousel {
+    position: relative;
+    width: 420px;
+    height: 520px;
+    overflow: hidden;
+    border-radius: 14px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
 }
 
-/* Buttons */
+.carousel-track {
+    position: relative;
+    height: 100%;
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.6s ease;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ARROWS */
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.35);
+    color: white;
+    border: none;
+    font-size: 18px;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+.arrow:hover {
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.left {
+    left: 12px;
+}
+
+.right {
+    right: 12px;
+}
+
+/* RIGHT: TEXT */
+.hero-text {
+    max-width: 480px;
+}
+
+.hero-text h2 {
+    font-size: 2.1rem;
+    margin-bottom: 22px;
+    font-weight: 500;
+}
+
+.hero-text p {
+    margin-bottom: 28px;
+    color: var(--lunar);
+}
+
+/* ============================= */
+/* BUTTON */
+/* ============================= */
 .button {
     display: inline-block;
-    padding: 12px 25px;
-    background-color: var(--creme-brulee);
+    padding: 12px 28px;
+    background: var(--creme);
     color: white;
     text-decoration: none;
     border-radius: 6px;
@@ -104,61 +167,247 @@ nav a:hover {
 }
 
 .button:hover {
-    background-color: var(--lunar);
+    background: var(--lunar);
 }
 
-/* Sections */
-section {
-    padding: 50px 20px;
-    max-width: 900px;
-    margin: auto;
+/* ============================= */
+/* CONTENT SECTIONS */
+/* ============================= */
+.section {
+    max-width: 800px;
+    margin: 60px auto 0 auto;
+    /* adds space from navbar */
+    padding: 90px 20px;
 }
 
-/* Recipe Grid */
+.section:first-of-type {
+    margin-top: 60px;
+}
+
+.section h2 {
+    font-weight: 500;
+    margin-bottom: 25px;
+}
+
+.light {
+    background: var(--soft);
+}
+
+.center {
+    text-align: center;
+}
+
+/* ============================= */
+/* REVEAL ANIMATION */
+/* ============================= */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ============================= */
+/* FOOTER */
+/* ============================= */
+footer {
+    text-align: center;
+    padding: 30px;
+    background: var(--inkwell);
+    color: var(--light);
+}
+
+/* ============================= */
+/* RESPONSIVE */
+/* ============================= */
+@media (max-width: 900px) {
+    .hero-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-carousel {
+        width: 85%;
+        height: 420px;
+    }
+
+    .hero-text {
+        max-width: 600px;
+    }
+}
+
 .recipe-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 25px;
+    grid-template-columns: repeat(3, 1fr);
+    /* exactly 3 per row */
+    gap: 40px;
+    /* space between cards */
     margin-top: 40px;
+    margin-bottom: 80px;
+    /* space before footer */
+    padding: 0 150px;
+    /* space from left/right edges of screen */
+    box-sizing: border-box;
+    /* ensures padding is included in width */
 }
 
-/* Hide recipe content initially */
-.recipe-content {
-    display: none;
-    margin-top: 15px;
-    text-align: left;
-}
-
-/* Card hover effect */
+/* RECIPE CARD */
 .recipe-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
     cursor: pointer;
-    transition: transform 0.3s ease;
+    transition: 0.3s ease;
 }
 
 .recipe-card:hover {
     transform: translateY(-5px);
 }
 
-.no-hover:hover {
-    transform: none !important;
-}
-
-footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #2c1f1a;
-    color: white;
+.recipe-card img {
     width: 100%;
-    box-sizing: border-box;
+    height: 220px;
+    object-fit: cover;
 }
 
-.center-section {
+.recipe-card h3 {
+    padding: 15px;
+    margin: 0;
+}
+
+.recipe-content {
+    display: none;
+    padding: 0 15px 20px 15px;
+}
+
+/* BREW CARD */
+.brew-card {
+    background: white;
+    padding: 25px;
+    margin: 25px 0;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+}
+
+.short-paragraph {
+    opacity: 1;
+    /* visible immediately */
+    transform: translateY(0);
+    /* no movement */
+    transition: none;
+    /* disable animation */
     text-align: center;
-    padding: 60px 20px;
+    /* optional: center text */
+    max-width: 700px;
+    /* optional: limits width for readability */
+    margin: 0 auto 30px auto;
+    /* top 0, bottom 40px spacing */
+    font-size: 1.3rem;
+    /* slightly larger for emphasis */
+    color: var(--lunar);
+    /* text color */
 }
 
-.contact-box {
-    max-width: 600px;
-    margin: 0 auto;
-    line-height: 1.8;
+@media (max-width: 900px) {
+    .recipe-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .recipe-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.intro-card {
+    background: var(--soft);
+    padding: 25px 30px;
+    border-radius: 12px;
+    max-width: 800px;
+    margin: 40px auto;
+    text-align: center;
+    font-size: 1.1rem;
+    color: var(--lunar);
+}
+
+/* Brewing Page Styles */
+.brewing-section {
+    max-width: 1000px;
+    margin: 0 auto 80px auto;
+    padding: 20px;
+}
+
+/* Brewing Page Styles */
+.brew-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 60px;
+}
+
+.brew-row.reverse {
+    flex-direction: row-reverse;
+}
+
+.brew-text,
+.brew-image {
+    flex: 0 0 50%;
+    /* take 50% each on desktop */
+}
+
+.brew-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+/* Responsive for mobile */
+@media (max-width: 900px) {
+
+    .brew-text,
+    .brew-image {
+        flex: 0 0 100%;
+        /* full width on mobile */
+    }
+}
+
+.brew-text h3 {
+    margin-bottom: 15px;
+}
+
+.brew-text p,
+.brew-text ul {
+    margin-bottom: 15px;
+    line-height: 1.6;
+    color: var(--lunar);
+}
+
+.brew-image {
+    flex: 1;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+
+    .brew-row,
+    .brew-row.reverse {
+        flex-direction: column;
+    }
+
+    .brew-image,
+    .brew-text {
+        width: 100%;
+    }
+
+    .brew-image img {
+        height: auto;
+    }
 }
