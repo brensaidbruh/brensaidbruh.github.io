@@ -3,11 +3,9 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Coffee Recipes | The Brew Notebook</title>
+    <title>Coffee Recipes | The BrewBook</title>
     <meta name="description"
-        content="Explore espresso, latte, mocha, cold brew and special signature coffee recipes from The Brew Notebook.">
-    <meta name="keywords"
-        content="espresso recipe, americano, latte, mocha, cold brew, dirty latte, hojicha latte, affogato, yuzu coffee">
+        content="Explore espresso, latte, mocha, cold brew and special signature coffee recipes from The BrewBook.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -27,222 +25,133 @@
 
     <section class="section light">
         <p class="short-paragraph">
-            Learn coffee recipes crafted with barista
-            experience and practical industry guidance
-            for everyday brewing.
+            Learn coffee recipes crafted with barista experience and practical industry guidance for everyday brewing.
         </p>
     </section>
 
+    <!-- ================= CLASSIC BREWS ================= -->
     <section>
         <h2 style="text-align:center;">☕ Classic Brews</h2>
 
-        <div class="recipe-grid">
+        <div class="recipe-grid recipe-grid-center">
 
             <!-- Espresso -->
-            <div class="recipe-card" onclick="toggleRecipe(this)">
-                <img src="images/recipe/coffee_recipe_espresso.jpg" alt="Fresh espresso shot in small ceramic cup">
+            <div class="recipe-card hoverable">
+                <img src="images/recipe/coffee_recipe_espresso.jpg" alt="Espresso">
                 <h3>Espresso</h3>
                 <div class="recipe-content">
-                    <h4>Ingredients</h4>
-                    <ul>
-                        <li>18g finely ground coffee</li>
-                    </ul>
-                    <h4>Steps</h4>
-                    <ol>
-                        <li>Tamp coffee grounds evenly.</li>
-                        <li>Extract for 25–30 seconds.</li>
-                        <li>Serve immediately.</li>
-                    </ol>
+                    <p><strong>Ingredients:</strong> 18g finely ground coffee</p>
+                    <p><strong>Extraction:</strong> 25–30 seconds</p>
                 </div>
             </div>
 
             <!-- Americano -->
-            <div class="recipe-card" onclick="toggleRecipe(this)">
-                <img src="images/recipe/coffee_recipe_americano.jpg" alt="Black coffee americano in glass cup">
-                <h3>Americano (black coffee)</h3>
+            <div class="recipe-card hoverable">
+                <img src="images/recipe/coffee_recipe_americano.jpg" alt="Americano">
+                <h3>Americano (Black Coffee)</h3>
                 <div class="recipe-content">
-                    <h4>Ingredients</h4>
-                    <ul>
-                        <li>1 double espresso (40g)</li>
-                        <li>Hot water</li>
-                    </ul>
-                    <h4>Steps</h4>
-                    <ol>
-                        <li>Pull espresso shot.</li>
-                        <li>Add 150ml hot water.</li>
-                        <li>Serve warm.</li>
-                    </ol>
+                    <p><strong>Hot:</strong> Double espresso + 150ml hot water</p>
+                    <p><strong>Ice:</strong> Double espresso + cold water + ice</p>
                 </div>
             </div>
 
             <!-- Latte -->
-            <div class="recipe-card" onclick="toggleRecipe(this)">
-                <img src="images/recipe/coffee_recipe_latte_unicorn.jpg" alt="Creamy white coffee latte with milk foam">
-                <h3>Coffee latte (white coffe)</h3>
+            <div class="recipe-card hoverable">
+                <img src="images/recipe/coffee_recipe_latte_unicorn.jpg" alt="Latte">
+                <h3>Latte (White Coffee)</h3>
                 <div class="recipe-content">
-                    <h4>Ingredients</h4>
-                    <ul>
-                        <li>1 double espresso (40g)</li>
-                        <li>200ml steamed milk</li>
-                    </ul>
-                    <h4>Steps</h4>
-                    <ol>
-                        <li>Prepare espresso.</li>
-                        <li>Steam milk until silky.</li>
-                        <li>Pour milk over espresso.</li>
-                    </ol>
+                    <p><strong>Hot:</strong> Espresso + 200ml steamed milk</p>
+                    <p><strong>Ice:</strong> Espresso + cold milk + ice</p>
                 </div>
             </div>
 
+
+
+
             <!-- Mocha -->
-            <div class="recipe-card" onclick="toggleRecipe(this)">
-                <img src="images/recipe/coffee_recipe_mocha.jpg" alt="Chocolate mocha coffee topped with cocoa powder">
+            <div class="recipe-card hoverable">
+                <img src="images/recipe/coffee_recipe_mocha.jpg" alt="Mocha">
                 <h3>Mocha</h3>
                 <div class="recipe-content">
-                    <h4>Ingredients</h4>
-                    <ul>
-                        <li>1 double espresso (40g)</li>
-                        <li>10g cacao powder</li>
-                        <li>15g sugar syrup</li>
-                        <li>200ml steamed milk</li>
-                    </ul>
-                    <h4>Steps</h4>
-                    <ol>
-                        <li>Mix cacao powder and sugar with espresso.</li>
-                        <li>Add steamed milk.</li>
-                        <li>Top with cocoa powder.</li>
-                    </ol>
+                    <p><strong>Hot:</strong> Espresso + cacao + steamed milk</p>
+                    <p><strong>Ice:</strong> Espresso + chocolate syrup + cold milk + ice</p>
                 </div>
             </div>
 
             <!-- Cold Brew -->
-            <div class="recipe-card" onclick="toggleRecipe(this)">
-                <img src="images/recipe/coffee_recipe_cold_brew.jpg" alt="Cold brew coffee with ice in tall glass">
+            <div class="recipe-card hoverable">
+                <img src="images/recipe/coffee_recipe_cold_brew.jpg" alt="Cold Brew">
                 <h3>Cold Brew</h3>
                 <div class="recipe-content">
-                    <h4>Ingredients</h4>
-                    <ul>
-                        <li>100g coarse coffee grounds</li>
-                        <li>1000g cold water</li>
-                    </ul>
-                    <h4>Steps</h4>
-                    <ol>
-                        <li>Mix coffee with water.</li>
-                        <li>Steep 12–18 hours in fridge.</li>
-                        <li>Strain and serve over ice.</li>
-                    </ol>
+                    <p>100g coarse coffee + 1000g water</p>
+                    <p>Steep 12–18 hours, strain and serve over ice.</p>
                 </div>
             </div>
 
             <!-- Dirty Latte -->
-            <div class="recipe-card" onclick="toggleRecipe(this)">
-                <img src="images/recipe/coffee_recipe_dirty_latte.jpg"
-                    alt="Dirty latte with espresso layered over milk">
+            <div class="recipe-card hoverable">
+                <img src="images/recipe/coffee_recipe_dirty_latte.jpg" alt="Dirty Latte">
                 <h3>Dirty Latte</h3>
                 <div class="recipe-content">
-                    <h4>Ingredients</h4>
-                    <ul>
-                        <li>Cold milk</li>
-                        <li>1 double espresso (40g)</li>
-                    </ul>
-                    <h4>Steps</h4>
-                    <ol>
-                        <li>Fill cold glass with cold milk.</li>
-                        <li>Slowly extract espresso over milk.</li>
-                        <li>Serve layered.</li>
-                    </ol>
+                    <p>Cold milk + freshly extracted espresso layered on top.</p>
                 </div>
             </div>
-
-        </div>
     </section>
+    </div>
 
+    <!-- ================= SPECIAL BREWS ================= -->
     <section>
-        <h2 style="text-align:center; margin-top:60px;">⭐ Special Brew</h2>
+        <h2 style="text-align:center; margin-top:60px;">⭐ Special Brews</h2>
 
-        <div class="recipe-grid">
+        <div class="recipe-grid recipe-grid-center">
 
             <!-- Hojicha Latte -->
-            <div class="recipe-card" onclick="toggleRecipe(this)">
-                <img src="images/recipe/coffee_recipe_hojicha.jpg" alt="Hojicha latte with roasted tea flavor">
+            <div class="recipe-card hoverable">
+                <img src="images/recipe/coffee_recipe_hojicha.jpg" alt="Hojicha Latte">
                 <h3>Hojicha Latte</h3>
                 <div class="recipe-content">
-                    <h4>Ingredients</h4>
-                    <ul>
-                        <li>5g hojicha powder</li>
-                        <li>150ml milk</li>
-                        <li>Sweetener (optional)</li>
-                    </ul>
-                    <h4>Steps</h4>
-                    <ol>
-                        <li>Whisk hojicha and sweetener with warm water.</li>
-                        <li>Add steamed milk.</li>
-                    </ol>
+                    <p><strong>Hot:</strong> Hojicha powder + steamed milk</p>
+                    <p><strong>Ice:</strong> Hojicha whisked + cold milk + ice</p>
                 </div>
             </div>
 
             <!-- Affogato -->
-            <div class="recipe-card" onclick="toggleRecipe(this)">
-                <img src="images/recipe/coffee_recipe_affogato.jpg"
-                    alt="Affogato dessert with espresso over vanilla ice cream">
+            <div class="recipe-card hoverable">
+                <img src="images/recipe/coffee_recipe_affogato.jpg" alt="Affogato">
                 <h3>Affogato</h3>
                 <div class="recipe-content">
-                    <h4>Ingredients</h4>
-                    <ul>
-                        <li>1 scoop vanilla ice cream</li>
-                        <li>1 single shot espresso (20g)</li>
-                    </ul>
-                    <h4>Steps</h4>
-                    <ol>
-                        <li>Place ice cream in cup.</li>
-                        <li>Pour hot espresso over.</li>
-                        <li>Serve immediately.</li>
-                    </ol>
+                    <p>Vanilla ice cream topped with hot espresso.</p>
                 </div>
             </div>
 
             <!-- Yuzu Sparkling Coffee -->
-            <div class="recipe-card" onclick="toggleRecipe(this)">
-                <img src="images/recipe/coffee_recipe_yuzu.jpg" alt="Yuzu sparkling coffee with citrus slice">
+            <div class="recipe-card hoverable">
+                <img src="images/recipe/coffee_recipe_yuzu.jpg" alt="Yuzu Sparkling Coffee">
                 <h3>Yuzu Sparkling Coffee</h3>
                 <div class="recipe-content">
-                    <h4>Ingredients</h4>
-                    <ul>
-                        <li>1 double espresso (40g)</li>
-                        <li>Yuzu syrup</li>
-                        <li>Sparkling water</li>
-                        <li>Ice</li>
-                    </ul>
-                    <h4>Steps</h4>
-                    <ol>
-                        <li>Fill glass with ice.</li>
-                        <li>Add yuzu syrup and sparkling water.</li>
-                        <li>Top with espresso.</li>
-                    </ol>
+                    <p>Yuzu syrup + sparkling water + espresso over ice.</p>
                 </div>
             </div>
 
         </div>
     </section>
-
-
 
     <footer>
         <p>© 2026 The BrewBook | Crafted with Passion</p>
     </footer>
 
     <script>
-        function toggleRecipe(card) {
-            const allCards = document.querySelectorAll(".recipe-content");
-            allCards.forEach(content => {
-                if (content !== card.querySelector(".recipe-content")) {
-                    content.style.display = "none";
-                }
+        // Hover toggle for recipe cards
+        document.querySelectorAll(".hoverable").forEach(card => {
+            card.addEventListener("mouseenter", () => {
+                const content = card.querySelector(".recipe-content");
+                content.style.display = "block";
             });
-
-            const content = card.querySelector(".recipe-content");
-            content.style.display = content.style.display === "block" ? "none" : "block";
-        }
+            card.addEventListener("mouseleave", () => {
+                const content = card.querySelector(".recipe-content");
+                content.style.display = "none";
+            });
+        });
     </script>
 
 </body>

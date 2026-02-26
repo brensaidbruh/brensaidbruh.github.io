@@ -11,7 +11,6 @@
 
 /* ============================= */
 /* GLOBAL */
-/* ============================= */
 body {
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
@@ -19,15 +18,18 @@ body {
     color: var(--inkwell);
     line-height: 1.8;
     font-size: 17px;
-    /* ADD THIS */
+}
+
+h2 {
+    text-align: center;
+    font-weight: 500;
 }
 
 /* ============================= */
 /* HEADER */
-/* ============================= */
 header {
     background: var(--inkwell);
-    padding: 25px;
+    padding: 25px 0;
     text-align: center;
 }
 
@@ -39,7 +41,6 @@ header h1 {
 
 /* ============================= */
 /* NAVIGATION */
-/* ============================= */
 nav {
     margin-top: 12px;
 }
@@ -61,10 +62,9 @@ nav a:hover {
 }
 
 /* ============================= */
-/* HERO SECTION */
-/* ============================= */
+/* HERO / CAROUSEL */
 .hero-wrapper {
-    padding: 90px 0;
+    padding: 60px 0;
 }
 
 .hero-container {
@@ -73,11 +73,11 @@ nav a:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 70px;
+    gap: 40px;
+    flex-wrap: wrap;
     padding: 0 20px;
 }
 
-/* LEFT: CAROUSEL */
 .hero-carousel {
     position: relative;
     width: 420px;
@@ -123,6 +123,7 @@ nav a:hover {
     cursor: pointer;
     border-radius: 6px;
     transition: 0.3s;
+    z-index: 10;
 }
 
 .arrow:hover {
@@ -137,25 +138,8 @@ nav a:hover {
     right: 12px;
 }
 
-/* RIGHT: TEXT */
-.hero-text {
-    max-width: 480px;
-}
-
-.hero-text h2 {
-    font-size: 2.1rem;
-    margin-bottom: 22px;
-    font-weight: 500;
-}
-
-.hero-text p {
-    margin-bottom: 28px;
-    color: var(--lunar);
-}
-
 /* ============================= */
-/* BUTTON */
-/* ============================= */
+/* BUTTONS */
 .button {
     display: inline-block;
     padding: 12px 28px;
@@ -171,91 +155,36 @@ nav a:hover {
 }
 
 /* ============================= */
-/* CONTENT SECTIONS */
-/* ============================= */
+/* SECTIONS */
 .section {
-    max-width: 800px;
-    margin: 60px auto 0 auto;
-    /* adds space from navbar */
-    padding: 90px 20px;
-}
-
-.section:first-of-type {
-    margin-top: 60px;
-}
-
-.section h2 {
-    font-weight: 500;
-    margin-bottom: 25px;
+    max-width: 1000px;
+    margin: 60px auto;
+    padding: 0 20px;
 }
 
 .light {
     background: var(--soft);
 }
 
-.center {
+.short-paragraph {
     text-align: center;
+    max-width: 700px;
+    margin: 0 auto 40px auto;
+    font-size: 1.3rem;
+    color: var(--lunar);
 }
 
 /* ============================= */
-/* REVEAL ANIMATION */
-/* ============================= */
-.reveal {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: all 0.8s ease;
-}
-
-.reveal.active {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* ============================= */
-/* FOOTER */
-/* ============================= */
-footer {
-    text-align: center;
-    padding: 30px;
-    background: var(--inkwell);
-    color: var(--light);
-}
-
-/* ============================= */
-/* RESPONSIVE */
-/* ============================= */
-@media (max-width: 900px) {
-    .hero-container {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .hero-carousel {
-        width: 85%;
-        height: 420px;
-    }
-
-    .hero-text {
-        max-width: 600px;
-    }
-}
-
+/* RECIPE GRID */
 .recipe-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    /* exactly 3 per row */
-    gap: 40px;
-    /* space between cards */
-    margin-top: 40px;
-    margin-bottom: 80px;
-    /* space before footer */
-    padding: 0 150px;
-    /* space from left/right edges of screen */
+    gap: 25px;
+    margin: 40px auto 80px auto;
+    padding: 0 40px;
     box-sizing: border-box;
-    /* ensures padding is included in width */
 }
 
-/* RECIPE CARD */
 .recipe-card {
     background: white;
     border-radius: 12px;
@@ -269,15 +198,17 @@ footer {
     transform: translateY(-5px);
 }
 
+/* 1:1 images */
 .recipe-card img {
     width: 100%;
-    height: 220px;
+    aspect-ratio: 1/1;
     object-fit: cover;
 }
 
 .recipe-card h3 {
     padding: 15px;
     margin: 0;
+    text-align: center;
 }
 
 .recipe-content {
@@ -285,71 +216,20 @@ footer {
     padding: 0 15px 20px 15px;
 }
 
-/* BREW CARD */
-.brew-card {
-    background: white;
-    padding: 25px;
-    margin: 25px 0;
-    border-radius: 12px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
-}
-
-.short-paragraph {
-    opacity: 1;
-    /* visible immediately */
-    transform: translateY(0);
-    /* no movement */
-    transition: none;
-    /* disable animation */
-    text-align: center;
-    /* optional: center text */
-    max-width: 700px;
-    /* optional: limits width for readability */
-    margin: 0 auto 30px auto;
-    /* top 0, bottom 40px spacing */
-    font-size: 1.3rem;
-    /* slightly larger for emphasis */
-    color: var(--lunar);
-    /* text color */
-}
-
-@media (max-width: 900px) {
-    .recipe-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 600px) {
-    .recipe-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-.intro-card {
-    background: var(--soft);
-    padding: 25px 30px;
-    border-radius: 12px;
-    max-width: 800px;
-    margin: 40px auto;
-    text-align: center;
-    font-size: 1.1rem;
-    color: var(--lunar);
-}
-
-/* Brewing Page Styles */
+/* ============================= */
+/* BREWING PAGE */
 .brewing-section {
-    max-width: 1000px;
+    max-width: 1100px;
     margin: 0 auto 80px auto;
-    padding: 20px;
+    padding: 0 20px;
 }
 
-/* Brewing Page Styles */
 .brew-row {
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
-    gap: 40px;
-    margin-bottom: 60px;
+    gap: 50px;
+    margin-bottom: 80px;
+    flex-wrap: wrap;
 }
 
 .brew-row.reverse {
@@ -358,25 +238,13 @@ footer {
 
 .brew-text,
 .brew-image {
-    flex: 0 0 50%;
-    /* take 50% each on desktop */
+    flex: 1;
 }
 
 .brew-image img {
     width: 100%;
-    height: auto;
     border-radius: 12px;
     object-fit: cover;
-}
-
-/* Responsive for mobile */
-@media (max-width: 900px) {
-
-    .brew-text,
-    .brew-image {
-        flex: 0 0 100%;
-        /* full width on mobile */
-    }
 }
 
 .brew-text h3 {
@@ -386,28 +254,339 @@ footer {
 .brew-text p,
 .brew-text ul {
     margin-bottom: 15px;
-    line-height: 1.6;
     color: var(--lunar);
 }
 
-.brew-image {
-    flex: 1;
+/* ============================= */
+/* CENTERED CONTENT FOR ABOUT/CONTACT */
+.center-content {
+    max-width: 700px;
+    margin: 0 auto 80px auto;
+    padding: 0 20px;
+    text-align: center;
 }
 
-/* Responsive */
-@media (max-width: 900px) {
+/* ============================= */
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 30px;
+    background: var(--inkwell);
+    color: var(--light);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* ============================= */
+/* RESPONSIVE */
+@media (max-width:900px) {
+    .hero-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-carousel {
+        width: 85%;
+        height: 420px;
+    }
+
+    .recipe-grid {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 0 30px;
+    }
 
     .brew-row,
     .brew-row.reverse {
         flex-direction: column;
     }
 
+    .brew-text,
+    .brew-image {
+        width: 100%;
+    }
+}
+
+@media (max-width:600px) {
+    .recipe-grid {
+        grid-template-columns: 1fr;
+        padding: 0 15px;
+    }
+}
+
+/* ============================= */
+/* SHORT CARD PARAGRAPHS */
+.short-card {
+    padding: 25px 20px;
+    border-radius: 12px;
+    max-width: 800px;
+    margin: 20px auto;
+    line-height: 1.7;
+    color: var(--inkwell);
+}
+
+/* Slightly different shades for alternating cards */
+.short-card:nth-child(odd) {
+    background-color: #F5EFE6;
+}
+
+.short-card:nth-child(even) {
+    background-color: #EDE6DB;
+}
+
+/* CONTACT BOX / ABOUT CENTERED CARD */
+.contact-box {
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 25px 20px;
+    background: #F5EFE6;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    line-height: 1.8;
+}
+
+.contact-box a {
+    color: var(--creme);
+    text-decoration: none;
+}
+
+.contact-box a:hover {
+    color: var(--lunar);
+}
+
+/* ============================= */
+/* FLEX LAYOUT FOR HERO (carousel + text) */
+/* ============================= */
+.hero-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+.hero-carousel {
+    flex: 1;
+    min-width: 300px;
+}
+
+.hero-text {
+    flex: 1;
+    min-width: 300px;
+}
+
+/* ============================= */
+/* SHORT PARAGRAPH CARDS WITH DIFFERENT SHADES */
+/* ============================= */
+.short-card {
+    padding: 20px;
+    border-radius: 12px;
+    margin: 20px auto;
+    max-width: 800px;
+    color: var(--inkwell);
+}
+
+.short-card:nth-child(odd) {
+    background: #F5EFE6;
+    /* light */
+}
+
+.short-card:nth-child(even) {
+    background: #EDE6DB;
+    /* slightly darker */
+}
+
+/* ============================= */
+/* CENTERED PARAGRAPHS FOR ABOUT/CONTACT */
+/* ============================= */
+.centered-paragraph {
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 25px 20px;
+    text-align: center;
+    border-radius: 12px;
+    background: #F5EFE6;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    line-height: 1.8;
+}
+
+/* Centered Recipe Grid (50% width) */
+.recipe-grid-center {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    justify-content: center;
+    gap: 25px;
+    max-width: 50%;
+    /* center and limit size */
+    margin: 0 auto 80px auto;
+}
+
+/* Recipe Cards Hover Content */
+.recipe-card.hoverable .recipe-content {
+    display: none;
+    padding: 10px 15px;
+    background: var(--soft);
+    border-radius: 8px;
+}
+
+/* Smaller, centered recipe-card */
+.recipe-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+    transition: 0.3s ease;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.recipe-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.recipe-card h3 {
+    text-align: center;
+    padding: 10px;
+}
+
+/* Show recipe-content on hover for non-touch devices */
+@media (hover: hover) {
+    .recipe-card.hoverable:hover .recipe-content {
+        display: block;
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+    .recipe-grid-center {
+        max-width: 90%;
+    }
+}
+
+/* ============================= */
+/* BREWING PAGE LAYOUT */
+/* ============================= */
+/* Brewing Section */
+.brewing-section {
+    max-width: 1100px;
+    margin: 0 auto 80px auto;
+    padding: 60px 20px 0 20px;
+    /* top padding to avoid touching header */
+}
+
+.brew-card-row {
+    margin-bottom: 40px;
+}
+
+/* Card container: flex for text + image */
+.brew-card {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    background: var(--soft);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    align-items: center;
+}
+
+/* Reverse class for alternating layout */
+.brew-card.reverse {
+    flex-direction: row-reverse;
+}
+
+/* Text and image flex */
+.brew-text,
+.brew-image {
+    flex: 1;
+}
+
+/* Card text styling */
+.brew-text h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.brew-text ul {
+    padding-left: 20px;
+    margin-bottom: 0;
+    color: var(--lunar);
+}
+
+/* Image 1:1 ratio */
+.brew-image img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .brew-card {
+        flex-direction: column;
+        /* stack vertically */
+    }
+
     .brew-image,
     .brew-text {
         width: 100%;
     }
+}
 
-    .brew-image img {
+/* ============================= */
+/* ABOUT PAGE: FLEX CARD LAYOUT */
+/* ============================= */
+
+.flex-card {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin: 30px auto;
+    padding: 20px;
+    border-radius: 14px;
+    background: var(--soft);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.flex-card:hover {
+    transform: translateY(-5px);
+}
+
+.flex-card .card-image img {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.flex-card .card-text {
+    flex: 1;
+    color: var(--lunar);
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.flex-card:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+/* Responsive: Stack vertically on small screens */
+@media (max-width: 900px) {
+    .flex-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .flex-card .card-image img {
+        width: 100%;
         height: auto;
+        margin-bottom: 15px;
     }
 }
