@@ -28,9 +28,9 @@
         <h2>About The BrewBook</h2>
 
         <!-- Card 1 -->
-        <div class="short-card flex-card">
+        <div class="short-card flex-card reverse">
             <div class="card-image">
-                <img src="images/coffee-cup1.jpg" alt="Latte art tulip">
+                <img src="images/about/coffee_about_work1.jpg" alt="Beginner barista">
             </div>
             <div class="card-text">
                 <p>
@@ -44,7 +44,7 @@
         <!-- Card 2 -->
         <div class="short-card flex-card">
             <div class="card-image">
-                <img src="images/coffee-cup2.jpg" alt="Coffee beans">
+                <img src="images/about/coffee_about_tulip.jpg" alt="Latte art tulip">
             </div>
             <div class="card-text">
                 <p>
@@ -55,9 +55,9 @@
         </div>
 
         <!-- Card 3 -->
-        <div class="short-card flex-card">
+        <div class="short-card flex-card reverse">
             <div class="card-image">
-                <img src="images/coffee-cup3.jpg" alt="Latte art unicorn">
+                <img src="images/about/coffee_about_seahorse.jpg" alt="Latte art seahorse">
             </div>
             <div class="card-text">
                 <p>
@@ -69,8 +69,8 @@
 
         <!-- Card 4 -->
         <div class="short-card flex-card">
-            <div class="card-image">
-                <img src="images/coffee-cup4.jpg" alt="Barista at work">
+            <div class="card-image reveal">
+                <img src="images/about/coffee_about_work2.jpg" alt="Barista at work">
             </div>
             <div class="card-text">
                 <p>
@@ -81,9 +81,9 @@
         </div>
 
         <!-- Card 5 -->
-        <div class="short-card flex-card">
-            <div class="card-image">
-                <img src="images/latte-competition.jpg" alt="Latte art competition">
+        <div class="short-card flex-card reverse">
+            <div class="card-image reveal">
+                <img src="images/about/coffee_about_comp.jpg" alt="Latte art competition">
             </div>
             <div class="card-text">
                 <p>
@@ -96,8 +96,8 @@
 
         <!-- Card 6 -->
         <div class="short-card flex-card">
-            <div class="card-image">
-                <img src="images/coffee-moments.jpg" alt="Coffee journey">
+            <div class="card-image reveal">
+                <img src="images/about/coffee_about_christmas.jpg" alt="Christmas latte art">
             </div>
             <div class="card-text">
                 <p>
@@ -113,6 +113,23 @@
     <footer>
         <p>© 2026 The BrewBook | Crafted with Passion</p>
     </footer>
+
+    <script>
+        // Scroll reveal
+        const reveal = document.querySelectorAll(".reveal");
+
+        window.addEventListener("scroll", () => {
+            reveal.forEach(el => {
+                const windowHeight = window.innerHeight;
+                const elementTop = el.getBoundingClientRect().top;
+
+                // Change the "-100" to adjust how early it appears
+                if (elementTop < windowHeight - 100) {
+                    el.classList.add("active");
+                }
+            });
+        });
+    </script>
 
 </body>
 

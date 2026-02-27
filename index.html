@@ -30,7 +30,7 @@
             <nav>
                 <a href="index.html">Home</a>
                 <a href="recipes.html">Recipes</a>
-                <a href="brewing.html">Brewing Guuide</a>
+                <a href="brewing.html">Brewing Guide</a>
                 <a href="about.html">About</a>
                 <a href="contact.html">Contact</a>
             </nav>
@@ -159,7 +159,6 @@
 
     <!-- SCRIPT -->
     <script>
-
         // Scroll Reveal
         const reveals = document.querySelectorAll(".reveal");
 
@@ -174,7 +173,7 @@
             });
         });
 
-        // Slider Logic
+        // Carousel / Slider
         const slides = document.querySelectorAll(".slide");
         const nextBtn = document.querySelector(".right");
         const prevBtn = document.querySelector(".left");
@@ -186,6 +185,7 @@
             slides[index].classList.add("active");
         }
 
+        // Manual controls
         nextBtn.addEventListener("click", () => {
             currentSlide = (currentSlide + 1) % slides.length;
             showSlide(currentSlide);
@@ -196,6 +196,25 @@
             showSlide(currentSlide);
         });
 
+        // Auto slide every 4 seconds
+        setInterval(() => {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }, 4000);
+
+        const reveal = document.querySelectorAll(".reveal");
+
+        window.addEventListener("scroll", () => {
+            reveal.forEach(el => {
+                const elementTop = el.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+
+                // trigger when element is 100px into the viewport
+                if (elementTop < windowHeight - 100) {
+                    el.classList.add("active");
+                }
+            });
+        });
     </script>
 
 </body>

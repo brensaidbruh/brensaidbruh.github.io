@@ -23,7 +23,7 @@
         </nav>
     </header>
 
-    <section class="section light">
+    <section class="section">
         <p class="short-paragraph">
             Learn coffee recipes crafted with barista experience and practical industry guidance for everyday brewing.
         </p>
@@ -33,10 +33,10 @@
     <section>
         <h2 style="text-align:center;">☕ Classic Brews</h2>
 
-        <div class="recipe-grid recipe-grid-center">
+        <div class="recipe-grid recipe-grid-center reveal">
 
             <!-- Espresso -->
-            <div class="recipe-card hoverable">
+            <div class="recipe-card">
                 <img src="images/recipe/coffee_recipe_espresso.jpg" alt="Espresso">
                 <h3>Espresso</h3>
                 <div class="recipe-content">
@@ -46,22 +46,22 @@
             </div>
 
             <!-- Americano -->
-            <div class="recipe-card hoverable">
+            <div class="recipe-card">
                 <img src="images/recipe/coffee_recipe_americano.jpg" alt="Americano">
                 <h3>Americano (Black Coffee)</h3>
                 <div class="recipe-content">
                     <p><strong>Hot:</strong> Double espresso + 150ml hot water</p>
-                    <p><strong>Ice:</strong> Double espresso + cold water + ice</p>
+                    <p><strong>Ice:</strong> Double espresso + 120ml cold water + ice</p>
                 </div>
             </div>
 
             <!-- Latte -->
-            <div class="recipe-card hoverable">
+            <div class="recipe-card">
                 <img src="images/recipe/coffee_recipe_latte_unicorn.jpg" alt="Latte">
                 <h3>Latte (White Coffee)</h3>
                 <div class="recipe-content">
                     <p><strong>Hot:</strong> Espresso + 200ml steamed milk</p>
-                    <p><strong>Ice:</strong> Espresso + cold milk + ice</p>
+                    <p><strong>Ice:</strong> Espresso + 120mlcold milk + ice</p>
                 </div>
             </div>
 
@@ -69,17 +69,17 @@
 
 
             <!-- Mocha -->
-            <div class="recipe-card hoverable">
+            <div class="recipe-card">
                 <img src="images/recipe/coffee_recipe_mocha.jpg" alt="Mocha">
                 <h3>Mocha</h3>
                 <div class="recipe-content">
-                    <p><strong>Hot:</strong> Espresso + cacao + steamed milk</p>
-                    <p><strong>Ice:</strong> Espresso + chocolate syrup + cold milk + ice</p>
+                    <p><strong>Hot:</strong> Espresso + 10g cacao + 200ml steamed milk</p>
+                    <p><strong>Ice:</strong> (Espresso + 10g cacao) + 120ml cold milk + ice</p>
                 </div>
             </div>
 
             <!-- Cold Brew -->
-            <div class="recipe-card hoverable">
+            <div class="recipe-card">
                 <img src="images/recipe/coffee_recipe_cold_brew.jpg" alt="Cold Brew">
                 <h3>Cold Brew</h3>
                 <div class="recipe-content">
@@ -89,11 +89,11 @@
             </div>
 
             <!-- Dirty Latte -->
-            <div class="recipe-card hoverable">
+            <div class="recipe-card">
                 <img src="images/recipe/coffee_recipe_dirty_latte.jpg" alt="Dirty Latte">
                 <h3>Dirty Latte</h3>
                 <div class="recipe-content">
-                    <p>Cold milk + freshly extracted espresso layered on top.</p>
+                    <p>Cold cup + 120ml cold milk + freshly extracted espresso layered on top.</p>
                 </div>
             </div>
     </section>
@@ -106,30 +106,32 @@
         <div class="recipe-grid recipe-grid-center">
 
             <!-- Hojicha Latte -->
-            <div class="recipe-card hoverable">
+            <div class="recipe-card">
                 <img src="images/recipe/coffee_recipe_hojicha.jpg" alt="Hojicha Latte">
                 <h3>Hojicha Latte</h3>
                 <div class="recipe-content">
-                    <p><strong>Hot:</strong> Hojicha powder + steamed milk</p>
-                    <p><strong>Ice:</strong> Hojicha whisked + cold milk + ice</p>
+                    <p><strong>Hot:</strong> 5g Hojicha powder whisk with warm water + sweetener (optional) + 200ml
+                        steamed milk</p>
+                    <p><strong>Ice:</strong> 5g Hojicha powder whisk with warm water + sweetener (optional) + 120ml cold
+                        milk + ice</p>
                 </div>
             </div>
 
             <!-- Affogato -->
-            <div class="recipe-card hoverable">
+            <div class="recipe-card">
                 <img src="images/recipe/coffee_recipe_affogato.jpg" alt="Affogato">
                 <h3>Affogato</h3>
                 <div class="recipe-content">
-                    <p>Vanilla ice cream topped with hot espresso.</p>
+                    <p>Vanilla ice cream topped with hot single espresso.</p>
                 </div>
             </div>
 
             <!-- Yuzu Sparkling Coffee -->
-            <div class="recipe-card hoverable">
+            <div class="recipe-card">
                 <img src="images/recipe/coffee_recipe_yuzu.jpg" alt="Yuzu Sparkling Coffee">
                 <h3>Yuzu Sparkling Coffee</h3>
                 <div class="recipe-content">
-                    <p>Yuzu syrup + sparkling water + espresso over ice.</p>
+                    <p>2 scoop yuzu puree + sparkling water + espresso over ice.</p>
                 </div>
             </div>
 
@@ -141,15 +143,44 @@
     </footer>
 
     <script>
-        // Hover toggle for recipe cards
-        document.querySelectorAll(".hoverable").forEach(card => {
-            card.addEventListener("mouseenter", () => {
-                const content = card.querySelector(".recipe-content");
-                content.style.display = "block";
+        const recipeCards = document.querySelectorAll(".recipe-card");
+
+        recipeCards.forEach(card => {
+            const content = card.querySelector(".recipe-content");
+
+            card.addEventListener("click", () => {
+
+                // Close other cards
+                recipeCards.forEach(other => {
+                    if (other !== card) {
+                        other.classList.remove("active");
+                        const otherContent = other.querySelector(".recipe-content");
+                        otherContent.style.maxHeight = null;
+                    }
+                });
+
+                // Toggle this card
+                card.classList.toggle("active");
+
+                if (card.classList.contains("active")) {
+                    content.style.maxHeight = content.scrollHeight + "px"; // expand to full height
+                } else {
+                    content.style.maxHeight = null; // collapse
+                }
             });
-            card.addEventListener("mouseleave", () => {
-                const content = card.querySelector(".recipe-content");
-                content.style.display = "none";
+        });
+
+        const reveal = document.querySelectorAll(".reveal");
+
+        window.addEventListener("scroll", () => {
+            reveal.forEach(el => {
+                const windowHeight = window.innerHeight;
+                const elementTop = el.getBoundingClientRect().top;
+
+                // Change the "-100" to adjust how early it appears
+                if (elementTop < windowHeight - 100) {
+                    el.classList.add("active");
+                }
             });
         });
     </script>

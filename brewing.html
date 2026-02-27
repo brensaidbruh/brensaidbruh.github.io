@@ -29,9 +29,9 @@
 
         <!-- Step 1 -->
         <div class="brew-card-row">
-            <div class="brew-card reverse">
+            <div class="brew-card">
                 <div class="brew-image">
-                    <img src="images/core-variables.jpg" alt="Core Brewing Variables">
+                    <img src="images/brew/coffee_brew_core.jpg" alt="Core Brewing Variables">
                 </div>
                 <div class="brew-text">
                     <h3>1. Core Brewing Variables</h3>
@@ -46,10 +46,10 @@
         </div>
 
         <!-- Step 2 -->
-        <div class="brew-card-row">
-            <div class="brew-card">
+        <div class="brew-card-row reveal">
+            <div class="brew-card reverse">
                 <div class="brew-image">
-                    <img src="images/brew-ratio.jpg" alt="Brew Ratios Guide">
+                    <img src="images/brew/coffee_brew_ratio.png" alt="Brew Ratios Guide">
                 </div>
                 <div class="brew-text">
                     <h3>2. Brew Ratios Reference</h3>
@@ -64,10 +64,10 @@
         </div>
 
         <!-- Step 3 -->
-        <div class="brew-card-row">
-            <div class="brew-card reverse">
+        <div class="brew-card-row reveal">
+            <div class="brew-card">
                 <div class="brew-image">
-                    <img src="images/espresso.jpg" alt="Espresso Shot">
+                    <img src="images/brew/coffee_brew_espresso_extract.jpg" alt="Espresso Shot">
                 </div>
                 <div class="brew-text">
                     <h3>3. Espresso Extraction</h3>
@@ -81,10 +81,10 @@
         </div>
 
         <!-- Step 4 -->
-        <div class="brew-card-row">
-            <div class="brew-card">
+        <div class="brew-card-row reveal">
+            <div class="brew-card reverse">
                 <div class="brew-image">
-                    <img src="images/pourover.jpg" alt="Pour Over Brewing">
+                    <img src="images/brew/coffee_brew_pour_over.jpg" alt="Pour Over Brewing">
                 </div>
                 <div class="brew-text">
                     <h3>4. Manual Brewing (Pour Over)</h3>
@@ -99,10 +99,10 @@
         </div>
 
         <!-- Step 5 -->
-        <div class="brew-card-row">
-            <div class="brew-card reverse">
+        <div class="brew-card-row reveal">
+            <div class="brew-card">
                 <div class="brew-image">
-                    <img src="images/frenchpress.jpg" alt="French Press Brewing">
+                    <img src="images/brew/coffee_brew_french_press.jpg" alt="French Press Brewing">
                 </div>
                 <div class="brew-text">
                     <h3>5. Immersion Brewing (French Press)</h3>
@@ -116,10 +116,10 @@
         </div>
 
         <!-- Step 6 -->
-        <div class="brew-card-row">
-            <div class="brew-card">
+        <div class="brew-card-row reveal">
+            <div class="brew-card reverse">
                 <div class="brew-image">
-                    <img src="images/coldbrew.jpg" alt="Cold Brew Coffee">
+                    <img src="images/brew/coffee_brew_coldbrew.jpg" alt="Cold Brew Coffee">
                 </div>
                 <div class="brew-text">
                     <h3>6. Cold Brew Extraction</h3>
@@ -137,6 +137,23 @@
     <footer>
         <p>© 2026 The BrewBook | Crafted with Precision</p>
     </footer>
+
+    <script>
+        // Scroll reveal
+        const reveal = document.querySelectorAll(".reveal");
+
+        window.addEventListener("scroll", () => {
+            reveal.forEach(el => {
+                const windowHeight = window.innerHeight;
+                const elementTop = el.getBoundingClientRect().top;
+
+                // Change the "-100" to adjust how early it appears
+                if (elementTop < windowHeight - 100) {
+                    el.classList.add("active");
+                }
+            });
+        });
+    </script>
 
 </body>
 
