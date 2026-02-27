@@ -441,10 +441,11 @@ nav a:hover {
 }
 
 .recipe-card h3 {
-    padding: 15px;
-    margin: 0;
     text-align: center;
+    font-weight: 500;
+    font-size: 15px;
 }
+
 
 /* RECIPE CONTENT EXPAND/COLLAPSE */
 .recipe-content {
