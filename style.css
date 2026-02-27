@@ -27,6 +27,8 @@ body {
     flex-direction: column;
     min-height: 100vh;
     /* full viewport height */
+
+    text-transform: none;
 }
 
 /* Make the main content grow to fill space */
