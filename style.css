@@ -44,14 +44,14 @@ title {
 h2 {
     text-align: center;
     font-weight: 900;
-    font-size: 26px;
+    font-size: 22px;
 
 }
 
 h3 {
     text-align: center;
     font-weight: 700;
-    font-size: 18px;
+    font-size: 12px;
 
 }
 
@@ -68,7 +68,7 @@ header h1 {
     color: var(--light);
     margin: 0;
     font-weight: 800;
-    font-size: 40px;
+    font-size: 32px;
 
 }
 
@@ -106,22 +106,29 @@ header h1 {
     /* example hover color */
 }
 
-/* Sidebar menu */
 .sidebar {
-    height: 100%;
+    height: 100vh;
+    /* use viewport height */
     width: 0;
-    /* hidden by default */
     position: fixed;
     top: 0;
     left: 0;
     background-color: var(--light);
+
+    overflow-y: auto;
+    /* allow vertical scroll */
     overflow-x: hidden;
+
     transition: width 0.4s ease;
     z-index: 1000;
     padding-top: 120px;
+
     display: flex;
     flex-direction: column;
     gap: 25px;
+
+    -webkit-overflow-scrolling: touch;
+    /* smooth scroll on iPhone */
 }
 
 /* Sidebar links */
@@ -166,27 +173,8 @@ header h1 {
     }
 }
 
-/* Responsive */
-@media (max-width: 900px) {
-    nav {
-        display: none;
-        /* hide desktop nav */
-    }
-
-    .hamburger {
-        display: block;
-    }
-}
-
-/* Responsive: show hamburger, hide desktop nav */
-@media (max-width: 900px) {
-    nav {
-        display: none;
-    }
-
-    .hamburger {
-        display: block;
-    }
+.sidebar {
+    padding-top: 80px;
 }
 
 /* ============================= */
