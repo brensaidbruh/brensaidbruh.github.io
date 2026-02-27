@@ -183,12 +183,15 @@
         const hamburger = document.getElementById('hamburger');
         const sidebar = document.getElementById('sidebar');
 
-        // Toggle sidebar open/close
         hamburger.addEventListener('click', () => {
-            if (sidebar.style.width === '250px') {
+            const isOpen = sidebar.style.width === '250px';
+
+            if (isOpen) {
                 sidebar.style.width = '0';
+                document.body.classList.remove('menu-open');
             } else {
                 sidebar.style.width = '250px';
+                document.body.classList.add('menu-open');
             }
         });
 

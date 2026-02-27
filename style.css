@@ -131,6 +131,10 @@ header h1 {
     /* smooth scroll on iPhone */
 }
 
+body.menu-open {
+    overflow: hidden;
+}
+
 /* Sidebar links */
 .sidebar a {
     padding: 8px 16px;
