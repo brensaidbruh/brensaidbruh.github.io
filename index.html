@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>The Brew Notebook | Easy Coffee Recipes & Brewing Guide</title>
+    <title>The Brew Notebook</title>
     <meta name="description"
         content="The Brew Notebook shares easy coffee recipes, brewing guides and homemade latte tips for everyday coffee lovers.">
     <meta name="keywords" content="coffee recipes, homemade coffee, iced latte recipe, brewing guide">
@@ -37,8 +37,23 @@
         </div>
     </header>
 
-    <section class="hero-wrapper">
+    <!-- Hamburger button -->
+    <div class="hamburger" id="hamburger">
+        &#9776; <!-- ☰ icon -->
+    </div>
 
+    <!-- Sidebar menu -->
+    <div class="sidebar" id="sidebar">
+        <a href="index.html">Home</a>
+        <a href="recipes.html">Recipes</a>
+        <a href="brewing.html">Brewing Guide</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+    </div>
+
+    <h2>Home</h2>
+
+    <section class="hero-wrapper">
         <div class="hero-container">
 
             <!-- LEFT: Carousel -->
@@ -53,16 +68,43 @@
                         <img src="images/home/coffee_home_pour_over.jpg" alt="Pour over coffee">
                     </div>
                     <div class="slide">
-                        <img src="images/home/coffee_home_machine.jpg" alt="Coffee coffee_home_machine">
+                        <img src="images/home/coffee_home_rabbit.jpg" alt="Latte rabbit art">
                     </div>
                     <div class="slide">
-                        <img src="images/home/coffee_home_espresso.jpg" alt="Espresso">
+                        <img src="images/home/coffee_home_machine.jpg" alt="Coffee machine">
+                    </div>
+                    <div class="slide">
+                        <img src="images/home/coffee_home_portafilter.jpg" alt="Portafilter">
+                    </div>
+                    <div class="slide">
+                        <img src="images/home/coffee_home_goat.jpg" alt="Latte art goat">
                     </div>
                     <div class="slide">
                         <img src="images/home/coffee_home_pour_latte.jpg" alt="Pour latte">
                     </div>
                     <div class="slide">
-                        <img src="images/home/coffee_home_extract.jpg" alt="Coffee extract">
+                        <img src="images/home/coffee_home_dripper.jpg" alt="Pour over clever dripper coffee">
+                    </div>
+                    <div class="slide">
+                        <img src="images/home/coffee_home_machine_dark.jpg" alt="Coffee machine">
+                    </div>
+                    <div class="slide">
+                        <img src="images/home/coffee_home_dino.jpg" alt="Dinosaur latte art design">
+                    </div>
+                    <div class="slide">
+                        <img src="images/home/coffee_home_extract.jpg" alt="Extract espresso">
+                    </div>
+                    <div class="slide">
+                        <img src="images/home/coffee_home_wing.jpg" alt="Wing based latte art design">
+                    </div>
+                    <div class="slide">
+                        <img src="images/home/coffee_home_sun_shine.jpg" alt="Sun shined coffee machine">
+                    </div>
+                    <div class="slide">
+                        <img src="images/home/coffee_home_swan.jpg" alt="Swan latte art design">
+                    </div>
+                    <div class="slide">
+                        <img src="images/home/coffee_home_art.jpg" alt="Coffee art">
                     </div>
                 </div>
 
@@ -71,7 +113,7 @@
 
             <!-- RIGHT: Text -->
             <div class="hero-text">
-                <h2>Simple Coffee. Intentional Moments.</h2>
+                <h3>Simple Coffee. Intentional Moments.</h3>
                 <p>
                     The BrewBook is a space for everyday coffee rituals.
                     Whether you're brewing before class or slowing down on a Sunday morning,
@@ -86,7 +128,7 @@
 
     <!-- HERO -->
     <section class="section light reveal">
-        <h2>Simple Coffee Recipes & Brewing Inspiration</h2>
+        <h3>Simple Coffee Recipes & Brewing Inspiration</h3>
         <p>
             Discover homemade coffee drinks, minimalist brewing guides,
             and barista-inspired ideas for everyday coffee lovers.
@@ -94,8 +136,8 @@
     </section>
 
     <!-- WEBSITE PURPOSE -->
-    <section class="section reveal">
-        <h2>Why The BrewBook Exists</h2>
+    <section class="section light reveal">
+        <h3>Why The BrewBook Exists</h3>
         <p>
             This website was created to make coffee simple and approachable.
             Many people love coffee but feel intimidated by complicated recipes
@@ -110,7 +152,7 @@
 
     <!-- HISTORY SECTION -->
     <section class="section light reveal">
-        <h2>The Story of Coffee</h2>
+        <h3>The Story of Coffee</h3>
         <p>
             Coffee's journey began in Ethiopia, where legend tells of a goat herder
             discovering the energizing effects of coffee cherries.
@@ -124,8 +166,8 @@
     </section>
 
     <!-- ORIGIN SECTION -->
-    <section class="section reveal">
-        <h2>From Bean to Brew</h2>
+    <section class="section light reveal">
+        <h3>From Bean to Brew</h3>
         <p>
             Coffee grows along the equatorial “Coffee Belt,” including
             South America, Africa and Southeast Asia.
@@ -215,6 +257,36 @@
                 }
             });
         });
+
+        const hamburger = document.getElementById('hamburger');
+        const sidebar = document.getElementById('sidebar');
+
+        // Toggle sidebar open/close
+        hamburger.addEventListener('click', () => {
+            if (sidebar.style.width === '250px') {
+                sidebar.style.width = '0';
+            } else {
+                sidebar.style.width = '250px';
+            }
+        });
+
+        // Function to check background
+        function updateHamburgerColor() {
+            const scrollY = window.scrollY;
+
+            // Example: change color after scrolling past 100px
+            if (scrollY > 100) {
+                hamburger.classList.add('dark'); // dark color on light background
+            } else {
+                hamburger.classList.remove('dark'); // white on top (dark header)
+            }
+        }
+
+        // Run on scroll
+        window.addEventListener('scroll', updateHamburgerColor);
+
+        // Run on load in case user reloads mid-page
+        updateHamburgerColor();
     </script>
 
 </body>

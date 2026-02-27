@@ -18,7 +18,9 @@ body {
     background: var(--light);
     color: var(--inkwell);
     line-height: 1.8;
-    font-size: 17px;
+    font-size: 14px;
+    font-weight: 20px;
+
 
     /* Make the whole page a column flex container */
     display: flex;
@@ -33,9 +35,22 @@ section {
     flex: 1;
 }
 
+title {
+    font-size: 20px;
+}
+
 h2 {
     text-align: center;
-    font-weight: 500;
+    font-weight: 900;
+    font-size: 30px;
+
+}
+
+h3 {
+    text-align: center;
+    font-weight: 700;
+    font-size: 24px;
+
 }
 
 /* ============================= */
@@ -55,6 +70,123 @@ header h1 {
 
 }
 
+/* Hamburger default */
+.hamburger {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1001;
+    color: white;
+    /* default white */
+    background: rgba(0, 0, 0, 0);
+    /* transparent */
+    padding: 8px 12px;
+    border-radius: 12px;
+    transition: color 0.3s ease, background 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Hamburger when on light section */
+.hamburger.dark {
+    color: var(--inkwell);
+    /* dark color for light background */
+    background: rgba(255, 255, 255, 0.8);
+    /* optional subtle bg */
+}
+
+.hamburger:hover {
+    background: rgba(255, 255, 255, 0.2);
+    /* subtle hover bg */
+    color: var(--creme);
+    /* example hover color */
+}
+
+/* Sidebar menu */
+.sidebar {
+    height: 100%;
+    width: 0;
+    /* hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: var(--light);
+    overflow-x: hidden;
+    transition: width 0.4s ease;
+    z-index: 1000;
+    padding-top: 120px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+/* Sidebar links */
+.sidebar a {
+    padding: 8px 16px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: var(--inkwell);
+    border-radius: 25px;
+    transition: background 0.3s, color 0.3s;
+    display: inline-block;
+    /* makes width only as wide as content */
+    width: fit-content;
+    /* shrink to text width */
+    text-align: center;
+    /* center text inside pill */
+    margin-left: auto;
+    /* center the pill in sidebar */
+    margin-right: auto;
+}
+
+/* Sidebar links hover */
+.sidebar a:hover {
+    background-color: var(--creme);
+    /* brown color */
+    color: white;
+    padding-left: 30px;
+    /* keep pill shape consistent */
+    padding-right: 30px;
+}
+
+/* RESPONSIVE: Hamburger on small screens */
+@media (max-width: 900px) {
+    nav {
+        display: none;
+        /* hide desktop nav */
+    }
+
+    .hamburger {
+        display: block;
+        /* show hamburger */
+    }
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    nav {
+        display: none;
+        /* hide desktop nav */
+    }
+
+    .hamburger {
+        display: block;
+    }
+}
+
+/* Responsive: show hamburger, hide desktop nav */
+@media (max-width: 900px) {
+    nav {
+        display: none;
+    }
+
+    .hamburger {
+        display: block;
+    }
+}
+
 /* ============================= */
 /* NAVIGATION */
 /* ============================= */
@@ -66,7 +198,7 @@ nav a {
     text-decoration: none;
     color: var(--inkwell);
     background: var(--light);
-    padding: 6px 14px;
+    padding: 8px 16px;
     margin: 0 6px;
     border-radius: 40px;
     font-size: 1.0rem;
@@ -96,7 +228,7 @@ nav a:hover {
 /* HERO / CAROUSEL */
 /* ============================= */
 .hero-wrapper {
-    padding: 90px 0;
+    padding: 10px 0;
     /* updated from 60px to 90px */
 }
 
@@ -211,14 +343,15 @@ nav a:hover {
 .section {
     max-width: 1000px;
     margin: 60px auto;
-    padding: 0 20px;
+    padding: 60px 50px 60px 50px;
+    /* top right bottom left */
 }
 
 .section.center {
     text-align: center;
     /* centers text and button */
-    padding: 60px 20px 80px;
-    /* top 60px, sides 20px, bottom 80px */
+    padding: 80px 40px 100px 40px;
+    /* top, right, bottom, left */
 }
 
 .section.center .button {
@@ -235,6 +368,17 @@ nav a:hover {
 
 .light {
     background: var(--soft);
+    border-radius: 40px;
+}
+
+@media (max-width: 900px) {
+    .section {
+        padding: 30px 20px;
+    }
+
+    .section.center {
+        padding: 40px 20px 60px 20px;
+    }
 }
 
 /* ============================= */
@@ -244,9 +388,9 @@ nav a:hover {
     text-align: center;
     max-width: 750px;
     /* slightly wider */
-    margin: 40px auto;
+    margin: 1px auto;
     /* vertical spacing from other sections */
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     /* slightly bigger text */
     line-height: 2;
     /* thicker line spacing */
@@ -325,6 +469,11 @@ nav a:hover {
     max-width: 1100px;
     margin: 0 auto 80px auto;
     padding: 0 20px;
+}
+
+.brewing-section h2 {
+    margin-bottom: 30px;
+    text-align: center;
 }
 
 .brew-row {

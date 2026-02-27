@@ -10,18 +10,46 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-664C1SBMFN"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-664C1SBMFN');
+</script>
+
 <body>
 
     <header>
-        <h1>The BrewBook</h1>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="recipes.html">Recipes</a>
-            <a href="brewing.html">Brewing Guide</a>
-            <a href="about.html">About</a>
-            <a href="contact.html">Contact</a>
-        </nav>
+        <div class="header-inner">
+            <h1>The BrewBook</h1>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="recipes.html">Recipes</a>
+                <a href="brewing.html">Brewing Guide</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
     </header>
+
+    <!-- Hamburger button -->
+    <div class="hamburger" id="hamburger">
+        &#9776; <!-- ☰ icon -->
+    </div>
+
+    <!-- Sidebar menu -->
+    <div class="sidebar" id="sidebar">
+        <a href="index.html">Home</a>
+        <a href="recipes.html">Recipes</a>
+        <a href="brewing.html">Brewing Guide</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+    </div>
+
+    <h2>Recipes</h2>
 
     <section class="section">
         <p class="short-paragraph">
@@ -31,7 +59,8 @@
 
     <!-- ================= CLASSIC BREWS ================= -->
     <section>
-        <h2 style="text-align:center;">☕ Classic Brews</h2>
+
+        <h3>☕ Classic Brews</h3>
 
         <div class="recipe-grid recipe-grid-center reveal">
 
@@ -96,12 +125,13 @@
                     <p>Cold cup + 120ml cold milk + freshly extracted espresso layered on top.</p>
                 </div>
             </div>
+
     </section>
-    </div>
+
 
     <!-- ================= SPECIAL BREWS ================= -->
     <section>
-        <h2 style="text-align:center; margin-top:60px;">⭐ Special Brews</h2>
+        <h3>⭐ Special Brews</h3>
 
         <div class="recipe-grid recipe-grid-center">
 
@@ -183,6 +213,36 @@
                 }
             });
         });
+
+        const hamburger = document.getElementById('hamburger');
+        const sidebar = document.getElementById('sidebar');
+
+        // Toggle sidebar open/close
+        hamburger.addEventListener('click', () => {
+            if (sidebar.style.width === '250px') {
+                sidebar.style.width = '0';
+            } else {
+                sidebar.style.width = '250px';
+            }
+        });
+
+        // Function to check background
+        function updateHamburgerColor() {
+            const scrollY = window.scrollY;
+
+            // Example: change color after scrolling past 100px
+            if (scrollY > 100) {
+                hamburger.classList.add('dark'); // dark color on light background
+            } else {
+                hamburger.classList.remove('dark'); // white on top (dark header)
+            }
+        }
+
+        // Run on scroll
+        window.addEventListener('scroll', updateHamburgerColor);
+
+        // Run on load in case user reloads mid-page
+        updateHamburgerColor();
     </script>
 
 </body>
