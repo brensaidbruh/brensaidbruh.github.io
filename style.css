@@ -442,20 +442,20 @@ nav a:hover {
     object-fit: cover;
 }
 
-/* Recipe card titles */
 .recipe-card h3 {
     font-size: 1rem;
-    /* slightly smaller than section h3 */
     font-weight: 500;
-    /* thinner than section h3 */
     text-align: center;
-    /* center inside card */
     color: var(--inkwell);
-    /* same color as other text */
     padding: 10px 0;
-    /* optional spacing */
     margin: 0;
-    /* remove default margin */
+
+    text-transform: none;
+    /* prevent forced uppercase */
+    font-variant: normal;
+    /* disables small-caps */
+    font-variant-caps: normal;
+    /* Chrome-specific for caps */
 }
 
 /* RECIPE CONTENT EXPAND/COLLAPSE */
