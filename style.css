@@ -111,31 +111,30 @@ header h1 {
 
     -webkit-overflow-scrolling: touch;
     /* smooth scroll on phone */
+
+
+    padding-top: 90px;
+    height: 100vh;
+    overflow-y: auto;
+
 }
 
-body.menu-open {
-    overflow: hidden;
-}
 
-/* Sidebar links */
+
 .sidebar a {
     padding: 8px 16px;
     text-decoration: none;
     font-size: 1.2rem;
     color: var(--inkwell);
     border-radius: 25px;
-    transform: translateX(-100%);
-    transition: transform 0.4s ease;
-    transition: background 0.3s, color 0.3s;
+
     display: inline-block;
-    /* makes width only as wide as content */
     width: fit-content;
-    /* shrink to text width */
     text-align: center;
-    /* center text inside pill */
     margin-left: auto;
-    /* center the pill in sidebar */
     margin-right: auto;
+
+    transition: background 0.3s, color 0.3s;
 }
 
 /* Sidebar links hover */
@@ -161,8 +160,8 @@ body.menu-open {
     }
 }
 
-.sidebar {
-    padding-top: 80px;
+body.menu-open {
+    overflow: hidden;
 }
 
 nav {
@@ -646,10 +645,14 @@ footer {
     opacity: 1;
 }
 
+
 .contact-section {
     max-width: 800px;
+    /* keeps content centered and not too wide */
     margin: 60px auto;
+    /* center vertically and horizontally */
     padding: 0 20px;
+    /* padding for mobile screens */
     text-align: center;
 }
 
@@ -657,6 +660,7 @@ footer {
     font-size: 2rem;
     margin-bottom: 20px;
     color: #3c2f2f;
+    /* matches coffee theme */
 }
 
 .contact-intro {
@@ -666,11 +670,14 @@ footer {
     line-height: 1.6;
 }
 
+/* Contact Card Styling */
 .contact-card {
     background-color: #fefcf8;
     border-radius: 16px;
+    /* rounded corners */
     padding: 30px 20px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    /* soft shadow */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -687,6 +694,7 @@ footer {
 
 .contact-card a {
     color: #b76e46;
+    /* coffee-tone link */
     text-decoration: none;
     font-weight: 500;
 }
