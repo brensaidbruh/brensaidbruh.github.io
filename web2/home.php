@@ -1,0 +1,141 @@
+<?php
+require_once dirname(__FILE__) . '/backend/auth.php';
+requireLogin();
+$user = getCurrentUser();
+?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ByteArena</title>
+    <link rel="icon" type="image/jpeg" href="./assets/ByteArena.jpg">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./style/home.css" />
+    <link rel="stylesheet" href="./style/game_cards.css" />
+</head>
+
+<body>
+    <?php include 'components/navbar.php'; ?>
+
+    <!-- Main Content -->
+    <div class="content-home">
+        <h1>Welcome to ByteArena</h1>
+        <p>Discover the ultimate gaming experience with thousands of titles</p>
+
+        <div class="button-container">
+            <button class="btn btn-browse" id="btn-browse-featured" type="button">Browse Games</button>
+            <button class="btn btn-membership" onclick="window.location.href='memberships.php'">Join Membership</button>
+        </div>
+
+        <div class="cards-section" id="featured-games">
+            <h2>Featured Games</h2>
+
+            <!-- Search & Filter Section -->
+            <div class="search-filter-section">
+                <div class="container-fluid">
+                    <div class="row g-3 align-items-start">
+                        <!-- Search Bar -->
+                        <div class="col-lg-5 col-md-12">
+                            <div class="search-container">
+                                <div class="input-group">
+                                    <span class="input-group-text">
+                                        <i class="fas fa-search"></i>
+                                    </span>
+                                    <input type="text" class="form-control" id="game-search"
+                                        placeholder="Search games by title, developer..." />
+                                    <button class="btn btn-outline-secondary" type="button" id="clear-search">
+                                        <i class="fas fa-times"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Platform Filter -->
+                        <div class="col-lg-3 col-md-6">
+                            <div class="filter-container">
+                                <button class="filter-toggle-btn" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#platformFilter">
+                                    <i class="fas fa-desktop"></i> Platforms
+                                    <span class="filter-badge" id="platform-count">0</span>
+                                    <i class="fas fa-chevron-down ms-auto"></i>
+                                </button>
+                                <div class="collapse filter-dropdown" id="platformFilter">
+                                    <div class="filter-content" id="platform-filters">
+                                        <div class="text-center p-3">
+                                            <i class="fas fa-spinner fa-spin"></i> Loading...
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Category Filter -->
+                        <div class="col-lg-3 col-md-6">
+                            <div class="filter-container">
+                                <button class="filter-toggle-btn" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#categoryFilter">
+                                    <i class="fas fa-tags"></i> Categories
+                                    <span class="filter-badge" id="category-count">0</span>
+                                    <i class="fas fa-chevron-down ms-auto"></i>
+                                </button>
+                                <div class="collapse filter-dropdown" id="categoryFilter">
+                                    <div class="filter-content" id="category-filters">
+                                        <div class="text-center p-3">
+                                            <i class="fas fa-spinner fa-spin"></i> Loading...
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Clear All Filters -->
+                        <div class="col-lg-1 col-md-12">
+                            <button class="btn btn-clear-all" id="clear-all-filters" title="Clear All Filters">
+                                <i class="fas fa-redo"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Active Filters Display -->
+            <div id="active-filters" class="active-filters-display" style="display: none;">
+                <span class="filter-label">Active Filters:</span>
+                <div id="active-filters-list"></div>
+            </div>
+
+            <!-- Loading State -->
+            <div id="loading-games" class="text-center" style="padding: 40px;">
+                <i class="fas fa-spinner fa-spin fa-3x" style="color: #cbbb08;"></i>
+                <p style="color: #cbbb08; margin-top: 15px;">Loading featured games...</p>
+            </div>
+
+            <!-- Games Container -->
+            <div id="featured-games-container" style="display: none;">
+                <!-- Games will be loaded here dynamically -->
+            </div>
+
+            <!-- No Games State -->
+            <div id="no-games" class="text-center" style="padding: 40px; display: none;">
+                <i class="fas fa-gamepad fa-3x mb-3" style="color: #cbbb08;"></i>
+                <h4 style="color: #fff;">No games found</h4>
+                <p style="color: rgba(255, 255, 255, 0.6);">Try adjusting your search or filters</p>
+            </div>
+        </div>
+    </div>
+
+    <?php include 'components/footer.php'; ?>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <script src="./js/home.js"></script>
+    <script src="./js/cart.js"></script>
+</body>
+
+</html>
