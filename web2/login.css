@@ -1,0 +1,95 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url('../assets/Purple Background.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+}
+
+h1{
+    text-align: center;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.container-login {
+    width: 100%;
+    max-width: 400px;
+    padding: 40px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+    background-color: #ffffff14;
+    border-radius: 8px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.input-field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.input-field label {
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.input-field input {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.input-field input:focus {
+    outline: none;
+    border-color: #490596;
+    box-shadow: 0 0 5px rgba(73, 5, 150, 0.3);
+}
+
+.input-field button {
+    padding: 10px;
+    background-color: #490596;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.input-field button:hover {
+    background-color: #3a0470;
+}
+
+.input-field p {
+    text-align: center;
+    font-size: 14px;
+    color: #ffffff;
+}
+
+.input-field a {
+    color: #cbbb08;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.input-field a:hover {
+    text-decoration: underline;
+}
