@@ -1,8 +1,3 @@
-<?php
-require_once dirname(__FILE__) . '/backend/auth.php';
-requireLogin();
-$user = getCurrentUser();
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,7 +18,6 @@ $user = getCurrentUser();
 </head>
 
 <body>
-  <?php include 'components/navbar.php'; ?>
 
   <!-- Cart Section -->
   <div class="cart-container">

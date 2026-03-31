@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Game Details - ByteArena</title>
+  <link rel="icon" type="image/jpeg" href="./assets/ByteArena.jpg">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="./style/home.css" />
+  <link rel="stylesheet" href="./style/itempage.css" />
+  <link rel="stylesheet" href="./style/game_cards.css" />
+</head>
+
+<body>
+
+  <!-- Loading State -->
+  <div id="game-loading" class="text-center" style="padding: 100px 20px;">
+    <i class="fas fa-spinner fa-spin fa-4x" style="color: #cbbb08;"></i>
+    <p style="color: #cbbb08; margin-top: 20px; font-size: 1.2rem;">Loading game details...</p>
+  </div>
+
+  <!-- Game Content -->
+  <div id="game-content" class="content-itempage" style="display: none;">
+    <!-- Product Card -->
+    <div class="card mb-3">
+      <!-- Content populated by JavaScript -->
+    </div>
+
+    <!-- Tabs -->
+    <ul class="nav nav-tabs" role="tablist">
+      <li class="nav-item" role="presentation">
+        <a class="nav-link active" id="description-tab" data-bs-toggle="tab" href="#description" role="tab">
+          Description
+        </a>
+      </li>
+      <li class="nav-item" role="presentation">
+        <a class="nav-link" id="requirements-tab" data-bs-toggle="tab" href="#requirements" role="tab">
+          System Requirements
+        </a>
+      </li>
+      <li class="nav-item" role="presentation">
+        <a class="nav-link" id="screenshots-tab" data-bs-toggle="tab" href="#screenshots" role="tab">
+          Screenshots
+        </a>
+      </li>
+      <li class="nav-item" role="presentation">
+        <a class="nav-link" id="reviews-tab" data-bs-toggle="tab" href="#reviews" role="tab">
+          Reviews
+        </a>
+      </li>
+    </ul>
+
+    <!-- Tab Content -->
+    <div class="tab-content">
+      <div class="tab-pane fade show active" id="description" role="tabpanel">
+        <!-- Content populated by JavaScript -->
+      </div>
+
+      <div class="tab-pane fade" id="requirements" role="tabpanel">
+        <!-- Content populated by JavaScript -->
+      </div>
+
+      <div class="tab-pane fade" id="screenshots" role="tabpanel">
+        <!-- Content populated by JavaScript -->
+      </div>
+
+      <div class="tab-pane fade" id="reviews" role="tabpanel">
+        <div class="card mt-3" style="background-color:#1a1a2e; border:1px solid rgba(203,187,8,0.35);">
+          <div class="card-body">
+            <div id="reviews-summary" class="mb-3"></div>
+
+            <form id="review-form" class="mb-4">
+              <input type="hidden" id="review-game-id" value="" />
+
+              <div class="row g-3">
+                <div class="col-md-3">
+                  <label class="form-label" style="color:#cbbb08;">Rating</label>
+                  <select class="form-select" id="review-rating" required>
+                    <option value="">Select</option>
+                    <option value="5">5 - Excellent</option>
+                    <option value="4">4 - Good</option>
+                    <option value="3">3 - Okay</option>
+                    <option value="2">2 - Bad</option>
+                    <option value="1">1 - Terrible</option>
+                  </select>
+                </div>
+
+                <div class="col-md-9">
+                  <label class="form-label" style="color:#cbbb08;">Title (optional)</label>
+                  <input class="form-control" id="review-title" maxlength="200" placeholder="Short summary" />
+                </div>
+
+                <div class="col-12">
+                  <label class="form-label" style="color:#cbbb08;">Review</label>
+                  <textarea class="form-control" id="review-text" rows="4"
+                    placeholder="Write your thoughts..."></textarea>
+                </div>
+
+                <div class="col-12 d-flex gap-2">
+                  <button type="submit" class="btn btn-action">
+                    <i class="fas fa-paper-plane"></i> Submit Review
+                  </button>
+                  <div id="review-status" style="align-self:center; color: rgba(255,255,255,0.7);"></div>
+                </div>
+              </div>
+            </form>
+
+            <div id="reviews-list"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Related Games -->
+    <div class="related-games">
+      <h3 class="section-title">You May Also Like</h3>
+      <div class="row">
+        <!-- Content populated by JavaScript -->
+      </div>
+    </div>
+  </div>
+
+  <?php include 'components/footer.php'; ?>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+  <script src="./js/itempage.js"></script>
+  <script src="./js/cart.js"></script>
+</body>
+
+</html>
