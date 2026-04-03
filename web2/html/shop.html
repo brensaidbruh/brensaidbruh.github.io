@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The BrewBook Shop | Shop</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/script.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <h1>The BrewBook Shop</h1>
+        <nav>
+            <a href="home.html">Home</a>
+            <a href="shop.html">Shop</a>
+            <a href="cart.html">Cart</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="section center">
+            <h2>Featured Coffee</h2>
+        </section>
+
+        <div class="recipe-grid">
+            <div class="recipe-card">
+                <img src="../images/espresso.jpg" alt="Espresso">
+                <h3>Espresso</h3>
+                <p>RM 9</p>
+                <div class="card-buttons">
+                    <button onclick="addToCart('Espresso', 9)">Add to Cart</button>
+                    <a href="item.html?product=Espresso" class="button secondary-btn">View Item</a>
+                </div>
+            </div>
+
+            <div class="recipe-card">
+                <img src="../images/latte.jpg" alt="Latte">
+                <h3>Latte</h3>
+                <p>RM 11</p>
+                <div class="card-buttons">
+                    <button onclick="addToCart('Latte', 11)">Add to Cart</button>
+                    <a href="item.html?product=Latte" class="button secondary-btn">View Item</a>
+                </div>
+            </div>
+
+            <div class="recipe-card">
+                <img src="../images/americano.jpg" alt="Americano">
+                <h3>Americano</h3>
+                <p>RM 10</p>
+                <div class="card-buttons">
+                    <button onclick="addToCart('Americano', 10)">Add to Cart</button>
+                    <a href="item.html?product=Americano" class="button secondary-btn">View Item</a>
+                </div>
+            </div>
+
+            <div class="recipe-card">
+                <img src="../images/cappuccino.jpg" alt="Cappuccino">
+                <h3>Cappuccino</h3>
+                <p>RM 11</p>
+                <div class="card-buttons">
+                    <button onclick="addToCart('Cappuccino', 11)">Add to Cart</button>
+                    <a href="item.html?product=Cappuccino" class="button secondary-btn">View Item</a>
+                </div>
+            </div>
+
+            <div class="recipe-card">
+                <img src="../images/flatwhite.jpg" alt="Flat White">
+                <h3>Flat White</h3>
+                <p>RM 11</p>
+                <div class="card-buttons">
+                    <button onclick="addToCart('Flat White', 11)">Add to Cart</button>
+                    <a href="item.html?product=Flat White" class="button secondary-btn">View Item</a>
+                </div>
+            </div>
+
+            <div class="recipe-card">
+                <img src="../images/mocha.jpg" alt="Mocha">
+                <h3>Mocha</h3>
+                <p>RM 12</p>
+                <div class="card-buttons">
+                    <button onclick="addToCart('Mocha', 12)">Add to Cart</button>
+                    <a href="item.html?product=Mocha" class="button secondary-btn">View Item</a>
+                </div>
+            </div>
+
+            <div class="recipe-card">
+                <img src="../images/coldbrew.jpg" alt="Cold Brew">
+                <h3>Cold Brew</h3>
+                <p>RM 14</p>
+                <div class="card-buttons">
+                    <button onclick="addToCart('Cold Brew', 14)">Add to Cart</button>
+                    <a href="item.html?product=Cold Brew" class="button secondary-btn">View Item</a>
+                </div>
+            </div>
+        </div>
+
+        <section class="section center">
+            <h2>Coffee Beans for Sale</h2>
+        </section>
+
+        <div class="recipe-grid">
+            <div class="recipe-card">
+                <img src="../images/ethiopia.jpg" alt="Ethiopia Beans">
+                <h3>Ethiopia</h3>
+                <p>RM 20 / 250g</p>
+                <div class="card-buttons">
+                    <button onclick="addToCart('Ethiopia Beans', 20)">Add to Cart</button>
+                    <a href="item.html?product=Ethiopia Beans" class="button secondary-btn">View Item</a>
+                </div>
+            </div>
+
+            <div class="recipe-card">
+                <img src="../images/columbia.jpg" alt="Columbia Beans">
+                <h3>Columbia</h3>
+                <p>RM 19 / 250g</p>
+                <div class="card-buttons">
+                    <button onclick="addToCart('Columbia Beans', 19)">Add to Cart</button>
+                    <a href="item.html?product=Columbia Beans" class="button secondary-btn">View Item</a>
+                </div>
+            </div>
+
+            <div class="recipe-card">
+                <img src="../images/yirgacheffe.jpg" alt="Yirgacheffe Beans">
+                <h3>Yirgacheffe</h3>
+                <p>RM 21 / 250g</p>
+                <div class="card-buttons">
+                    <button onclick="addToCart('Yirgacheffe Beans', 21)">Add to Cart</button>
+                    <a href="item.html?product=Yirgacheffe Beans" class="button secondary-btn">View Item</a>
+                </div>
+            </div>
+
+            <div class="recipe-card">
+                <img src="../images/costarica.jpg" alt="Costa Rica Beans">
+                <h3>Costa Rica</h3>
+                <p>RM 22 / 250g</p>
+                <div class="card-buttons">
+                    <button onclick="addToCart('Costa Rica Beans', 22)">Add to Cart</button>
+                    <a href="item.html?product=Costa Rica Beans" class="button secondary-btn">View Item</a>
+                </div>
+            </div>
+
+            <div class="recipe-card">
+                <img src="../images/guatemala.jpg" alt="Guatemala Beans">
+                <h3>Guatemala</h3>
+                <p>RM 20 / 250g</p>
+                <div class="card-buttons">
+                    <button onclick="addToCart('Guatemala Beans', 20)">Add to Cart</button>
+                    <a href="item.html?product=Guatemala Beans" class="button secondary-btn">View Item</a>
+                </div>
+            </div>
+
+            <div class="recipe-card">
+                <img src="../images/brazil.jpg" alt="Brazil Beans">
+                <h3>Brazil</h3>
+                <p>RM 18 / 250g</p>
+                <div class="card-buttons">
+                    <button onclick="addToCart('Brazil Beans', 18)">Add to Cart</button>
+                    <a href="item.html?product=Brazil Beans" class="button secondary-btn">View Item</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2026 The BrewBook</p>
+        <div class="legal-notice">
+            <p>Disclaimer: This is a fictional online store created for educational purposes only.</p>
+            <p>No actual products are sold, and no payments are processed.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

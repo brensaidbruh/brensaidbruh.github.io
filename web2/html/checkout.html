@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The BrewBook Shop | Checkout</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/script.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <h1>The BrewBook Shop</h1>
+        <nav>
+            <a href="home.html">Home</a>
+            <a href="shop.html">Shop</a>
+            <a href="cart.html">Cart</a>
+        </nav>
+    </header>
+
+    <div class="checkout-container">
+        <aside class="order-summary">
+            <h3>Order Summary</h3>
+
+            <div id="checkout-items">
+                <p style="padding: 20px; color: var(--lunar);">Loading your ritual...</p>
+            </div>
+
+            <div class="total-luxury" style="margin-top: 30px; border-top: 2px solid var(--soft); padding-top: 20px;">
+                <p style="text-transform: uppercase; letter-spacing: 1px; font-size: 0.8rem;">Grand Total</p>
+                <h2 id="checkout-total" style="color: var(--creme);">RM 0.00</h2>
+            </div>
+        </aside>
+
+        <section class="checkout-form">
+            <div class="checkout-header-box">
+                <h1>Secure Checkout</h1>
+            </div>
+            <form class="checkout-form-body" onsubmit="placeOrder(event)">
+                <label>Full Delivery Name</label>
+                <input type="text" placeholder="Your Name" required>
+
+                <label>Shipping Address</label>
+                <input type="text" placeholder="Your Address" required>
+
+                <label>Payment Information</label>
+                <input type="text" placeholder="1234 5678 9012 3456" required>
+
+                <div class="checkout-disabled-note">
+                    Notice: This website is for <strong>educational purposes only</strong>.
+                </div>
+
+                <button type="submit" class="button" style="width: 100%;">Place Order</button>
+
+                <p style="text-align: center; margin-top: 20px;">
+                    <a href="cart.html"
+                        style="color: var(--lunar); text-decoration: none; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px;">←
+                        Back to Cart</a>
+                </p>
+            </form>
+        </section>
+    </div>
+
+    <footer>
+        <p>© 2026 The BrewBook</p>
+        <div class="legal-notice">
+            <p>Disclaimer: This is a fictional online store created for educational purposes only.</p>
+            <p>No actual products are sold, and no payments are processed.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

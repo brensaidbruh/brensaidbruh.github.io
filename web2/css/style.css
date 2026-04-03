@@ -1,0 +1,997 @@
+/* ========== 1. COLORS & ROOT ========== */
+:root {
+    --inkwell: #2C3639;
+    --lunar: #3F4E4F;
+    --creme: #A27B5B;
+    --light: #F5EFE6;
+    --soft: #EDE6DB;
+    --white: #FCF8F2;
+}
+
+/* ========== 2. GLOBAL STYLES ========== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: var(--light);
+    color: var(--inkwell);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* ========== 3. HEADER & NAV ========== */
+header {
+    background: var(--inkwell);
+    padding: 30px 20px;
+    text-align: center;
+}
+
+header h1 {
+    color: var(--light);
+    font-size: 2.8rem;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--light);
+    padding: 8px 20px;
+    margin: 0 5px;
+    border-radius: 50px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    background: var(--creme);
+}
+
+/* ========== 4. UNIVERSAL BUTTONS ========== */
+button,
+a.button {
+    appearance: none;
+    background-color: var(--creme);
+    color: var(--white) !important;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 25px;
+    min-width: 160px;
+    width: auto;
+    border-radius: 12px;
+    font-weight: 600;
+    transition: 0.3s ease;
+    white-space: nowrap;
+}
+
+button:hover,
+a.button:hover {
+    background-color: var(--lunar);
+    transform: translateY(-2px);
+}
+
+.secondary-btn {
+    background-color: var(--lunar) !important;
+}
+
+/* ========== 5. LOGIN & FORM SHARED STYLES ========== */
+.login-page {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    min-height: 100vh !important;
+    background: var(--soft);
+}
+
+.container-login {
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto;
+    background: var(--white);
+    border-radius: 25px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    overflow: hidden;
+}
+
+.login-form-body {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ========== LOGIN & CHECKOUT HEADER BOX ========== */
+.login-header-box {
+    background: var(--inkwell);
+    color: var(--white);
+    padding: 40px 20px;
+    /* Top/Bottom: 40px, Left/Right: 20px */
+    text-align: center;
+}
+
+.login-header-box h1 {
+    color: var(--light);
+    font-size: 2.2rem;
+    margin: 0;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* Input Fields for Login & Checkout */
+.container-login label,
+.checkout-form label {
+    display: block;
+    text-align: left;
+    font-weight: 700;
+    margin-top: 15px;
+    margin-bottom: 8px;
+    color: var(--inkwell);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+}
+
+.container-login input,
+.checkout-form input {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 15px;
+    border: 2px solid var(--soft);
+    border-radius: 12px;
+    font-size: 1rem;
+    background: var(--light);
+    display: block;
+}
+
+/* ========== UPDATED PARAGRAPH STYLING ========== */
+
+p {
+    font-size: 1.15rem;
+    /* Increased from the standard size */
+    line-height: 1.8;
+    /* Extra space between lines for better readability */
+    color: var(--lunar);
+    /* Using your darker grey for a softer look than pure black */
+    margin-bottom: 1.5rem;
+}
+
+/* Specifically for the Hero Section to make it stand out more */
+.hero-content p {
+    font-size: 1.25rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Ensuring the origin grid text remains balanced */
+.origin-item p {
+    font-size: 1rem;
+    /* Slightly smaller here so the cards don't get too long */
+    line-height: 1.6;
+}
+
+/* ========== BEAN TO BREW SECTION CARD ========== */
+
+/* The main container section */
+.origin-section {
+    background: var(--white);
+    max-width: 1100px;
+    margin: 60px auto;
+    padding: 60px 40px;
+    border-radius: 30px;
+    /* Extra rounded for a soft "BrewBook" feel */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.04);
+    text-align: center;
+    border: 1px solid rgba(162, 123, 91, 0.1);
+    /* Subtle creme border */
+}
+
+.origin-section h3 {
+    font-size: 2rem;
+    color: var(--creme);
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+}
+
+/* The 3 country boxes inside */
+.origin-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.origin-item {
+    flex: 1;
+    min-width: 250px;
+    background: var(--soft);
+    /* Tinted background to distinguish from the main card */
+    padding: 30px 20px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.origin-item:hover {
+    transform: translateY(-5px);
+    background: var(--white);
+    border: 1px solid var(--creme);
+    box-shadow: 0 10px 20px rgba(162, 123, 91, 0.1);
+}
+
+.origin-item strong {
+    display: block;
+    color: var(--inkwell);
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.origin-item p {
+    font-size: 0.95rem;
+    color: var(--lunar);
+    margin-bottom: 0;
+    line-height: 1.4;
+}
+
+/* ========== SHOP PAGE HEADER FIX ========== */
+
+.section.center {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 60px 20px 20px 20px;
+    /* More space on top, less on bottom */
+    margin: 0 auto !important;
+}
+
+.section.center h2 {
+    font-size: 1.8rem;
+    /* h1 is 2.5rem, so 2rem is the perfect "middle" size */
+    color: var(--inkwell);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+/* Optional: Adds a small stylish line under the centered H2 */
+.section.center h2::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: var(--creme);
+}
+
+.recipe-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.recipe-card {
+    background: var(--white);
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+.recipe-card img {
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border-radius: 15px;
+    margin-bottom: 15px;
+}
+
+/* ========== 7. ITEM DETAIL PAGE ========== */
+.item-detail {
+    max-width: 500px;
+    margin: 40px auto;
+    background: var(--white);
+    padding: 40px;
+    border-radius: 25px;
+    text-align: center;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.item-image-wrapper {
+    width: 300px;
+    height: 300px;
+    margin: 0 auto 20px auto;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+#item-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+#item-image:hover {
+    transform: scale(1.1);
+}
+
+#item-price {
+    font-size: 2rem;
+    color: var(--creme);
+    font-weight: 700;
+    margin: 10px 0;
+}
+
+/* Pill Quantity Selector */
+.qty-wrapper {
+    margin: 20px 0;
+}
+
+/* ========== REFINED QUANTITY SELECTOR ========== */
+
+.qty-selector {
+    display: inline-flex;
+    align-items: center;
+    background: var(--soft);
+    /* The warm "sand" color wrapper */
+    padding: 6px;
+    border-radius: 50px;
+    /* Pill shape */
+    border: 1px solid rgba(44, 54, 57, 0.05);
+    /* Very faint edge */
+}
+
+.qty-control {
+    all: unset;
+    width: 32px !important;
+    height: 32px !important;
+    background: var(--white) !important;
+    /* Clean white circles */
+    color: var(--lunar) !important;
+    /* Subtle dark grey for the + and - */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    /* Tiny shadow to make them "pop" */
+}
+
+/* On hover, the + and - turn to your brand color instead of being solid color */
+.qty-control:hover {
+    color: var(--creme) !important;
+    transform: scale(1.1);
+}
+
+.qty-selector input {
+    all: unset;
+    width: 45px;
+    font-weight: 700;
+    text-align: center;
+    color: var(--inkwell);
+    font-size: 1rem;
+}
+
+/* ========== 8. CART & CHECKOUT LAYOUT ========== */
+.cart-card {
+    background: var(--white);
+    margin: 10px auto;
+    padding: 20px;
+    max-width: 800px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+}
+
+/* ========== CHECKOUT PAGE: BALANCED LAYOUT ========== */
+
+.checkout-container {
+    max-width: 1200px;
+    /* FIX: Added 80px margin to push the cards away from the Header H1 */
+    margin: 80px auto 100px auto;
+    display: flex;
+    gap: 40px;
+    padding: 0 20px;
+    align-items: flex-start;
+}
+
+/* FIX: Adjusted proportions so Order Summary is wider (45%) and Form is (55%) */
+.order-summary {
+    flex: 1.2;
+    background: var(--white);
+    border-radius: 25px;
+    padding: 40px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    border: none;
+}
+
+.checkout-form {
+    flex: 1.5;
+    background: var(--white);
+    border-radius: 25px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    border: none;
+}
+
+/* FIX: Ensure the Red X does not show up in the Checkout Summary */
+.order-summary .remove-item-btn {
+    display: none !important;
+}
+
+/* --- Summary Internal Layout --- */
+.summary-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    /* More vertical space for a "premium" feel */
+    border-bottom: 1px solid var(--soft);
+}
+
+.summary-details strong {
+    font-size: 1rem;
+    color: var(--inkwell);
+    text-transform: uppercase;
+}
+
+/* --- Form Body Spacing --- */
+.checkout-form-body {
+    padding: 40px;
+}
+
+.checkout-header-box {
+    background: var(--inkwell);
+    color: var(--white);
+    padding: 35px;
+    text-align: center;
+}
+
+/* --- Inputs & Buttons (Consistent with Login) --- */
+.checkout-form input {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 20px;
+    border: 2px solid var(--soft);
+    border-radius: 12px;
+    background: var(--light);
+}
+
+.checkout-form .button {
+    width: 100%;
+    padding: 16px;
+    border-radius: 12px;
+    font-size: 1rem;
+}
+
+/* --- Mobile Fix --- */
+@media (max-width: 900px) {
+    .checkout-container {
+        flex-direction: column-reverse;
+        margin-top: 40px;
+    }
+
+    .order-summary,
+    .checkout-form {
+        width: 100%;
+    }
+}
+
+footer {
+    background-color: var(--inkwell);
+    /* Dark background */
+    color: var(--light);
+    /* Light, readable text */
+    padding: 40px 20px;
+    /* Gives it some breathing room */
+    text-align: center;
+    /* Centers the copyright and disclaimer */
+    width: 100%;
+    margin-top: 50px;
+    /* Pushes it away from the content above */
+}
+
+/* Ensure the links inside the footer are also visible */
+footer a {
+    color: var(--light);
+    text-decoration: underline;
+}
+
+/* Specifically targeting your disclaimer text class */
+.legal-notice {
+    font-size: 0.8rem;
+    opacity: 0.7;
+    /* Makes it look secondary but still readable */
+    margin-top: 15px;
+}
+
+/* ========== 10. MEDIA QUERIES ========== */
+@media (max-width: 900px) {
+    .checkout-container {
+        flex-direction: column;
+        padding: 0 20px;
+    }
+
+    .checkout-form {
+        min-width: 100%;
+    }
+}
+
+/* Target both the button and the 'View Item' link */
+.recipe-card button,
+.recipe-card .button.secondary-btn {
+    display: inline-block;
+    /* Essential for <a> tags to respect height/padding */
+    padding: 10px 16px;
+    /* Identical padding */
+    font-size: 14px;
+    /* Identical font size */
+    border-radius: 20px;
+    /* Matching corners */
+    text-align: center;
+    text-decoration: none;
+    /* Removes underline from the <a> link */
+    cursor: pointer;
+    width: 100px;
+    /* Optional: Set a fixed width so they are identical */
+    box-sizing: border-box;
+    /* Forces padding to stay inside the width */
+    vertical-align: middle;
+    /* Keeps them aligned if they are side-by-side */
+    border: 2px solid transparent;
+    /* Prevents jumping when a border is added on hover */
+}
+
+/* Adjust colors for the Secondary Button to keep them distinct but same size */
+.secondary-btn {
+    background-color: transparent;
+    color: var(--creme);
+    border: 2px solid var(--creme) !important;
+    /* Forces the border to show */
+}
+
+/* Space between the price and the buttons */
+.recipe-card p {
+    margin-bottom: 20px;
+    /* Adjust this number to increase/decrease space */
+    font-weight: 500;
+    color: var(--creme);
+}
+
+/* Space between the 'Add to Cart' and 'View Item' buttons */
+.card-buttons {
+    display: flex;
+    gap: 10px;
+    /* Adds space horizontally between the two buttons */
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.recipe-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background: var(--white);
+    border-radius: 12px;
+    height: 100%;
+    /* Keeps cards same height in the grid */
+}
+
+.recipe-card h3 {
+    margin-bottom: 5px;
+    /* Space between Title and Price */
+}
+
+/* --- Home Page Specific Styles --- */
+
+/* --- Proper Home Page Layout --- */
+
+/* ========== HERO SECTION ========== */
+/* ========== THEME-FITTING HERO SECTION ========== */
+
+.hero-home {
+    height: 80vh;
+    /* A bit taller to feel dramatic */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    /* 1. THE MASKED BACKGROUND */
+    /* Overlay uses your theme: Inkwell (dark) fading to a warm Creme tint */
+    background: linear-gradient(135deg, rgba(44, 54, 57, 0.8), rgba(162, 123, 91, 0.3)),
+        url('../images/home.jpg');
+    background-size: cover;
+    background-position: center;
+
+    /* 2. THE CURVED MASK (The key theme fit) */
+    /* This negative border trick creates a "window" effect */
+    border-radius: 0 0 200px 200px / 0 0 40px 40px;
+    margin-bottom: 60px;
+    /* Space for the reveal section */
+
+    color: var(--white);
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* 3. OPTIONAL: Adds a subtle gold/creme line at the bottom of the curve */
+.hero-home::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: var(--creme);
+    opacity: 0.5;
+}
+
+/* --- Content Styling: Hierarchy is Key --- */
+.hero-content h2 {
+    font-size: 2rem;
+    color: var(--light);
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.hero-content p {
+    /* Increased size for better "vibe" and readability */
+    font-size: 1.35rem;
+    max-width: 700px;
+    margin: 0 auto 40px;
+    line-height: 1.6;
+
+    /* Matching your H1 color for consistency */
+    color: var(--white);
+    opacity: 0.95;
+    font-weight: 400;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* --- THE CTA BUTTON --- */
+.hero-content .button {
+    background-color: var(--creme);
+    /* Main color */
+    color: var(--white);
+    padding: 16px 35px;
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    /* Open spacing for "Shop" look */
+    border-radius: 50px;
+    /* Fully rounded button */
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.hero-content .button:hover {
+    background-color: var(--lunar);
+    /* Secondary color on hover */
+    transform: translateY(-3px);
+    /* Subtle lift */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.hero-content h2 {
+    font-size: clamp(2.2rem, 5vw, 3.2rem);
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.hero-content p {
+    max-width: 600px;
+    margin: 0 auto 30px;
+}
+
+/* ========== MAIN CONTENT LAYOUT ========== */
+.section {
+    padding: 100px 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.center-align {
+    text-align: center;
+    /* Forces all text to the middle */
+}
+
+.alternate-bg {
+    background-color: var(--soft);
+    max-width: 100%;
+    /* Spans full width for background color */
+    padding: 100px 10%;
+}
+
+h3 {
+    font-size: 1.8rem;
+    color: var(--creme);
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.origin-item {
+    /* 1. Use your 'soft' variable for a warm, paper-like feel */
+    background: var(--soft);
+    padding: 40px;
+    border-radius: 25px;
+    text-align: center;
+
+    /* 2. Instead of a thick black line, use a thin, elegant 'creme' border */
+    border: 1px solid rgba(162, 123, 91, 0.3);
+
+    /* 3. A soft glow that matches the 'creme' color */
+    box-shadow: 0 10px 30px rgba(162, 123, 91, 0.1);
+
+    transition: all 0.3s ease;
+}
+
+.origin-item strong {
+    color: var(--creme);
+    /* Country name in your brand gold/brown */
+    font-size: 1.4rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.origin-item p {
+    color: var(--lunar);
+    /* Dark grey for the description */
+    font-size: 1rem;
+    margin: 0;
+}
+
+/* ========== CTA WRAPPER ========== */
+.cta-wrap {
+    padding: 60px 20px;
+    border-top: 1px solid var(--creme);
+    /* Simple separator line */
+}
+
+/* ========== SUBTLE LINK ========== */
+.read-more-link {
+    display: inline-block;
+    margin-top: 15px;
+    color: var(--creme);
+    text-decoration: none;
+    font-style: italic;
+    border-bottom: 1px solid var(--creme);
+}
+
+/* ========== REVEAL ANIMATION ========== */
+.reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: 1s ease-out;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+footer {
+    background: var(--inkwell);
+    color: var(--light);
+    padding: 40px 20px;
+    text-align: center;
+}
+
+/* ========== 8. CART & CHECKOUT LAYOUT (CENTERED) ========== */
+
+/* ========== CART PAGE SPECIFIC STYLES ========== */
+
+.cart-container {
+    text-align: center;
+    padding: 60px 20px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.cart-container h2 {
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--inkwell);
+}
+
+/* The Total and Proceed Section */
+.cart-summary-box {
+    margin: 40px auto;
+    max-width: 400px;
+    border-top: 2px solid var(--creme);
+    padding-top: 30px;
+}
+
+.cart-summary-box h3 {
+    font-size: 1.5rem;
+    color: var(--inkwell);
+    margin-bottom: 20px;
+}
+
+/* Make sure the Checkout button is full width within its box */
+.cart-summary-box button {
+    width: 100%;
+    background-color: var(--creme);
+    color: var(--white);
+    padding: 15px;
+    border: none;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.cart-summary-box button:hover {
+    background-color: var(--lunar);
+}
+
+/* FORCE THE RED X */
+.remove-item-btn {
+    all: unset !important;
+    /* Removes all default browser button styles */
+    display: inline-block !important;
+    cursor: pointer !important;
+
+    /* THE COLOR FIX */
+    color: #ff0000 !important;
+    /* Brightest Red */
+    background: none !important;
+    border: none !important;
+
+    /* POSITIONING & SIZE */
+    font-size: 2rem !important;
+    font-weight: 900 !important;
+    line-height: 1 !important;
+    padding: 5px 15px !important;
+    margin-left: 20px !important;
+
+    /* ACCESSIBILITY */
+    transition: transform 0.2s ease;
+}
+
+.remove-item-btn:hover {
+    color: #c0392b !important;
+    /* Darker red on hover */
+    transform: scale(1.2);
+}
+
+/* ========== THE "NOTICE" VIBE FIX ========== */
+
+.checkout-disabled-note {
+    background-color: #FFF9E6;
+    /* Very light warning yellow/cream */
+    color: #856404;
+    /* Deep gold/brown text for readability */
+    border: 1px solid #FFEBA0;
+    /* Subtle border to define the box */
+    padding: 20px;
+    border-radius: 12px;
+    /* Consistent with your inputs */
+    font-size: 0.85rem;
+    line-height: 1.5;
+    text-align: left;
+    /* Left align looks more like an official document */
+    margin: 25px 0;
+    position: relative;
+    padding-left: 55px;
+    /* Space for the "!" icon */
+}
+
+/* Creating a "!" Warning Icon using CSS */
+.checkout-disabled-note::before {
+    content: "!";
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #E2B933;
+    /* Warning Gold */
+    color: white;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900;
+    font-size: 1rem;
+}
+
+.checkout-disabled-note strong {
+    color: #533f03;
+    /* Extra dark for the "Educational Purposes" text */
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* ========== FOOTER TEXT CONSISTENCY ========== */
+
+footer p {
+    color: var(--light) !important;
+    /* Forces the color to match your H1 */
+    font-size: 1rem;
+    /* Keeps it professional and clean */
+    margin-bottom: 10px;
+    /* Small gap between lines */
+    opacity: 1;
+    /* Ensures it is fully visible and bright */
+}
+
+/* Also update the legal notice so it's the same color but slightly smaller */
+.legal-notice p {
+    color: var(--light) !important;
+    font-size: 0.85rem;
+    opacity: 0.8;
+    /* A tiny bit of transparency for the fine print */
+}
+
+/* ========== SUBTLE BACK NAVIGATION ========== */
+
+.back-navigation {
+    max-width: 500px;
+    /* Matches your .item-detail width */
+    margin: 20px auto -30px auto;
+    /* Pulls the card up closer */
+    text-align: left;
+    padding: 0 10px;
+}
+
+.back-link {
+    text-decoration: none;
+    color: var(--lunar);
+    /* Subtle grey color */
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.back-link:hover {
+    color: var(--creme);
+    /* Turns to brand color on hover */
+}
+
+/* Ensure the detail card has enough space */
+.item-detail {
+    margin-top: 40px;
+}

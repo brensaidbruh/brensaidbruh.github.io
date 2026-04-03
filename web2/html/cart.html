@@ -2,159 +2,35 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Shopping Cart</title>
-  <link rel="icon" type="image/jpeg" href="./assets/ByteArena.jpg">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="../css/home.css" />
-  <link rel="stylesheet" href="../css/cart.css" />
-  <link rel="stylesheet" href="../css/game_cards.css" />
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-    crossorigin="anonymous"></script>
+  <meta charset="UTF-8">
+  <title>The BrewBook Shop | Cart</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="../js/script.js" defer></script>
 </head>
 
 <body>
-
-  <!-- Cart Section -->
-  <div class="cart-container">
-    <h1 class="page-title">Your Shopping Cart</h1>
-    <p class="page-subtitle">Review your items and proceed to checkout</p>
-
-    <div class="row">
-      <!-- Cart Items -->
-      <div class="col-lg-8">
-        <div class="cart-card">
-          <div id="cart-items">
-            <!-- JS renders cart items here -->
-          </div>
-
-          <!-- Empty Cart State -->
-          <div class="empty-cart d-none" id="empty-cart">
-            <i class="fas fa-shopping-cart"></i>
-            <h3>Your cart is empty</h3>
-            <p>Browse our collection and add some games to your cart!</p>
-            <a href="home.php" class="btn btn-browse">Browse Games</a>
-          </div>
-
-          <!-- Continue Shopping Button -->
-          <div class="cart-footer">
-            <a href="home.php" class="continue-shopping"><i class="fas fa-arrow-left me-2"></i> Continue Shopping</a>
-          </div>
-        </div>
-
-        <!-- Suggested Games (DYNAMIC, empty when cart empty) -->
-        <div class="suggested-games d-none" id="suggested-games">
-          <h3 class="suggested-title">You might also like</h3>
-          <div class="row g-2" id="suggested-games-row">
-            <!-- JS renders Steam-like cards here -->
-          </div>
-        </div>
-      </div>
-
-      <!-- Order Summary -->
-      <div class="col-lg-4">
-        <div class="summary-card">
-          <h3 class="summary-title">Order Summary</h3>
-
-          <div class="summary-row">
-            <span class="summary-label" id="subtotal-label">Subtotal (0 items)</span>
-            <span class="summary-value" id="subtotal">$0.00</span>
-          </div>
-
-          <div class="summary-row">
-            <span class="summary-label">Discount</span>
-            <span class="summary-value" id="discount">-$0.00</span>
-          </div>
-
-          <div class="summary-row">
-            <span class="summary-label">Tax</span>
-            <span class="summary-value" id="tax">$0.00</span>
-          </div>
-
-          <div class="summary-row">
-            <span class="summary-label">Shipping</span>
-            <span class="summary-value" id="shipping">$0.00</span>
-          </div>
-
-          <div class="total-row">
-            <span>Total</span>
-            <span id="total">$0.00</span>
-          </div>
-
-          <div class="coupon-section">
-            <div class="coupon-controls">
-              <input type="text" class="coupon-input" placeholder="Enter coupon code" />
-              <button class="btn-coupon" type="button">Apply</button>
-            </div>
-          </div>
-
-          <!-- Payment Method Dropdown (Bootstrap) -->
-          <div class="mb-3">
-            <label for="paymentMethod" class="form-label" style="color: rgba(255,255,255,0.75);">
-              Payment Method
-            </label>
-            <div class="dropdown">
-              <button class="btn btn-outline-light dropdown-toggle w-100" type="button" id="paymentMethodBtn"
-                data-bs-toggle="dropdown" aria-expanded="false">
-                Select payment method
-              </button>
-              <ul class="dropdown-menu w-100" aria-labelledby="paymentMethodBtn">
-                <li>
-                  <button class="dropdown-item" type="button" data-value="fpx">FPX</button>
-                </li>
-                <li>
-                  <button class="dropdown-item" type="button" data-value="tng">TNG</button>
-                </li>
-              </ul>
-              <input type="hidden" id="paymentMethod" name="payment_method" value="" />
-            </div>
-          </div>
-
-          <button class="btn-checkout" id="checkout-btn" type="button">
-            Purchase
-          </button>
-
-          <div class="mt-4 text-center">
-            <small class="text-security">
-              <i class="fas fa-lock me-1"></i> Your payment information is
-              secure and encrypted
-            </small>
-          </div>
-        </div>
-      </div>
+  <header>
+    <h1>The BrewBook Shop</h1>
+    <nav><a href="home.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="cart.html">Cart</a>
+    </nav>
+  </header>
+  <main class="section cart-container">
+    <h2>Your Shopping Bag</h2>
+    <div id="cart-items"></div>
+    <div style="margin: 20px auto; max-width: 400px; border-top: 2px solid var(--creme); padding-top: 20px;">
+      <h3>Total: RM <span id="total">0.00</span></h3>
+      <button onclick="goToCheckout()" style="width: 100%; margin-top: 20px;">Proceed to Checkout</button>
     </div>
-  </div>
-
-  <!-- Toast Notification -->
-  <div class="toast" id="toast">
-    <i class="fas fa-check-circle"></i>
-    <span id="toast-message">Item added to cart!</span>
-  </div>
-
-  <?php include 'components/footer.php'; ?>
-
-  <!-- Cart logic -->
-  <script src="./js/cart.js"></script>
-
-  <script>
-    document.addEventListener('click', function (e) {
-      const item = e.target.closest('.dropdown-item[data-value]');
-      if (!item) return;
-
-      const value = item.getAttribute('data-value') || '';
-      const label = item.textContent.trim();
-
-      const btn = document.getElementById('paymentMethodBtn');
-      const input = document.getElementById('paymentMethod');
-
-      if (btn) btn.textContent = label;
-      if (input) input.value = value;
-    });
-  </script>
+  </main>
+  <footer>
+    <p>© 2026 The BrewBook</p>
+    <div class="legal-notice">
+      <p>Disclaimer: This is a fictional online store created for educational purposes only.</p>
+      <p>No actual products are sold, and no payments are processed.</p>
+    </div>
+  </footer>
 </body>
 
 </html>

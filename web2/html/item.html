@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>The BrewBook | Product</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="../js/script.js" defer></script>
+</head>
+
+<body>
+  <header>
+    <h1>The BrewBook Shop</h1>
+    <nav><a href="home.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="cart.html">Cart</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="back-navigation">
+      <a href="shop.html" class="back-link">&larr; Back to Shop</a>
+    </div>
+    <div class="item-detail">
+      <h2 id="item-title">Loading...</h2>
+
+      <div class="item-image-wrapper">
+        <img id="item-image" src="../images/placeholder.jpg" alt="Product">
+      </div>
+
+      <p id="item-price">RM 0</p>
+
+      <p id="item-description"
+        style="color: var(--lunar); font-size: 1rem; margin: 15px 0; padding: 0 20px; line-height: 1.5;">
+        Product description will appear here.
+      </p>
+
+      <div class="qty-wrapper">
+        <p>Quantity</p>
+        <div class="qty-selector">
+          <button type="button" class="qty-control" onclick="changeQty(-1)">-</button>
+          <input type="number" id="item-qty" value="1" readonly>
+          <button type="button" class="qty-control" onclick="changeQty(1)">+</button>
+        </div>
+      </div>
+
+      <button id="add-to-cart-btn">Add to Cart</button>
+
+      <div style="margin-top: 20px; padding-top: 20px; border-top: 1px solid var(--soft); width: 100%;">
+        <a href="cart.html" class="button secondary-btn">View Shopping Cart</a>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <p>© 2026 The BrewBook</p>
+    <div class="legal-notice">
+      <p>Disclaimer: This is a fictional online store created for educational purposes only.</p>
+      <p>No actual products are sold, and no payments are processed.</p>
+    </div>
+  </footer>
+</body>
+
+</html>
