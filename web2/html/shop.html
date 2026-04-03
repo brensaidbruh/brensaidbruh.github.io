@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The BrewBook Shop | Shop</title>
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/shop-style.css">
     <script src="../js/script.js" defer></script>
 </head>
 
@@ -21,143 +22,155 @@
 
     <main>
         <section class="section center">
-            <h2>Featured Coffee</h2>
+            <h2>Freshly Brewed Coffee</h2>
         </section>
 
         <div class="recipe-grid">
             <div class="recipe-card">
                 <img src="../images/espresso.jpg" alt="Espresso">
                 <h3>Espresso</h3>
-                <p>RM 9</p>
+                <p class="price-tag">RM 9.00</p>
                 <div class="card-buttons">
                     <button onclick="addToCart('Espresso', 9)">Add to Cart</button>
-                    <a href="item.html?product=Espresso" class="button secondary-btn">View Item</a>
+                    <a href="item.html?product=Espresso" class="secondary-btn">View Details</a>
                 </div>
             </div>
 
             <div class="recipe-card">
                 <img src="../images/latte.jpg" alt="Latte">
                 <h3>Latte</h3>
-                <p>RM 11</p>
+                <p class="price-tag">RM 11.00</p>
+                <select id="shop-temp-Latte" class="shop-temp-select">
+                    <option value="Hot">Hot</option>
+                    <option value="Iced">Iced</option>
+                </select>
                 <div class="card-buttons">
-                    <button onclick="addToCart('Latte', 11)">Add to Cart</button>
-                    <a href="item.html?product=Latte" class="button secondary-btn">View Item</a>
+                    <button onclick="addToCartFromShop('Latte', 11)">Add to Cart</button>
+                    <a href="item.html?product=Latte" class="secondary-btn">View Details</a>
                 </div>
             </div>
 
             <div class="recipe-card">
                 <img src="../images/americano.jpg" alt="Americano">
                 <h3>Americano</h3>
-                <p>RM 10</p>
+                <p class="price-tag">RM 10.00</p>
+                <select id="shop-temp-Americano" class="shop-temp-select">
+                    <option value="Hot">Hot</option>
+                    <option value="Iced">Iced</option>
+                </select>
                 <div class="card-buttons">
-                    <button onclick="addToCart('Americano', 10)">Add to Cart</button>
-                    <a href="item.html?product=Americano" class="button secondary-btn">View Item</a>
+                    <button onclick="addToCartFromShop('Americano', 10)">Add to Cart</button>
+                    <a href="item.html?product=Americano" class="secondary-btn">View Details</a>
                 </div>
             </div>
 
             <div class="recipe-card">
                 <img src="../images/cappuccino.jpg" alt="Cappuccino">
                 <h3>Cappuccino</h3>
-                <p>RM 11</p>
+                <p class="price-tag">RM 11.00</p>
                 <div class="card-buttons">
                     <button onclick="addToCart('Cappuccino', 11)">Add to Cart</button>
-                    <a href="item.html?product=Cappuccino" class="button secondary-btn">View Item</a>
+                    <a href="item.html?product=Cappuccino" class="secondary-btn">View Details</a>
                 </div>
             </div>
 
             <div class="recipe-card">
                 <img src="../images/flatwhite.jpg" alt="Flat White">
                 <h3>Flat White</h3>
-                <p>RM 11</p>
+                <p class="price-tag">RM 11.00</p>
                 <div class="card-buttons">
                     <button onclick="addToCart('Flat White', 11)">Add to Cart</button>
-                    <a href="item.html?product=Flat White" class="button secondary-btn">View Item</a>
+                    <a href="item.html?product=Flat White" class="secondary-btn">View Details</a>
                 </div>
             </div>
 
             <div class="recipe-card">
                 <img src="../images/mocha.jpg" alt="Mocha">
                 <h3>Mocha</h3>
-                <p>RM 12</p>
+                <p class="price-tag">RM 12.00</p>
+                <select id="shop-temp-Mocha" class="shop-temp-select">
+                    <option value="Hot">Hot</option>
+                    <option value="Iced">Iced</option>
+                </select>
                 <div class="card-buttons">
-                    <button onclick="addToCart('Mocha', 12)">Add to Cart</button>
-                    <a href="item.html?product=Mocha" class="button secondary-btn">View Item</a>
+                    <button onclick="addToCartFromShop('Mocha', 12)">Add to Cart</button>
+                    <a href="item.html?product=Mocha" class="secondary-btn">View Details</a>
                 </div>
             </div>
 
             <div class="recipe-card">
                 <img src="../images/coldbrew.jpg" alt="Cold Brew">
                 <h3>Cold Brew</h3>
-                <p>RM 14</p>
+                <p class="price-tag">RM 14.00</p>
                 <div class="card-buttons">
                     <button onclick="addToCart('Cold Brew', 14)">Add to Cart</button>
-                    <a href="item.html?product=Cold Brew" class="button secondary-btn">View Item</a>
+                    <a href="item.html?product=Cold Brew" class="secondary-btn">View Details</a>
                 </div>
             </div>
         </div>
 
         <section class="section center">
-            <h2>Coffee Beans for Sale</h2>
+            <h2>Whole Bean (250g)</h2>
         </section>
 
         <div class="recipe-grid">
             <div class="recipe-card">
-                <img src="../images/ethiopia.jpg" alt="Ethiopia Beans">
-                <h3>Ethiopia</h3>
-                <p>RM 20 / 250g</p>
+                <img src="../images/ethiopia.jpg" alt="Ethiopia">
+                <h3>Ethiopia Yirgacheffe</h3>
+                <p class="price-tag">RM 55.00</p>
                 <div class="card-buttons">
-                    <button onclick="addToCart('Ethiopia Beans', 20)">Add to Cart</button>
-                    <a href="item.html?product=Ethiopia Beans" class="button secondary-btn">View Item</a>
+                    <button onclick="addToCart('Ethiopia Beans', 55)">Add to Cart</button>
+                    <a href="item.html?product=Ethiopia Beans" class="secondary-btn">View Details</a>
                 </div>
             </div>
 
             <div class="recipe-card">
-                <img src="../images/columbia.jpg" alt="Columbia Beans">
-                <h3>Columbia</h3>
-                <p>RM 19 / 250g</p>
+                <img src="../images/columbia.jpg" alt="Columbia">
+                <h3>Colombia Huila</h3>
+                <p class="price-tag">RM 48.00</p>
                 <div class="card-buttons">
-                    <button onclick="addToCart('Columbia Beans', 19)">Add to Cart</button>
-                    <a href="item.html?product=Columbia Beans" class="button secondary-btn">View Item</a>
+                    <button onclick="addToCart('Columbia Beans', 48)">Add to Cart</button>
+                    <a href="item.html?product=Columbia Beans" class="secondary-btn">View Details</a>
                 </div>
             </div>
 
             <div class="recipe-card">
-                <img src="../images/yirgacheffe.jpg" alt="Yirgacheffe Beans">
-                <h3>Yirgacheffe</h3>
-                <p>RM 21 / 250g</p>
+                <img src="../images/yirgacheffe.jpg" alt="Yirgacheffe">
+                <h3>Special Reserve Yirgacheffe</h3>
+                <p class="price-tag">RM 65.00</p>
                 <div class="card-buttons">
-                    <button onclick="addToCart('Yirgacheffe Beans', 21)">Add to Cart</button>
-                    <a href="item.html?product=Yirgacheffe Beans" class="button secondary-btn">View Item</a>
+                    <button onclick="addToCart('Yirgacheffe Beans', 65)">Add to Cart</button>
+                    <a href="item.html?product=Yirgacheffe Beans" class="secondary-btn">View Details</a>
                 </div>
             </div>
 
             <div class="recipe-card">
-                <img src="../images/costarica.jpg" alt="Costa Rica Beans">
-                <h3>Costa Rica</h3>
-                <p>RM 22 / 250g</p>
+                <img src="../images/costarica.jpg" alt="Costa Rica">
+                <h3>Costa Rica Tarrazu</h3>
+                <p class="price-tag">RM 52.00</p>
                 <div class="card-buttons">
-                    <button onclick="addToCart('Costa Rica Beans', 22)">Add to Cart</button>
-                    <a href="item.html?product=Costa Rica Beans" class="button secondary-btn">View Item</a>
+                    <button onclick="addToCart('Costa Rica Beans', 52)">Add to Cart</button>
+                    <a href="item.html?product=Costa Rica Beans" class="secondary-btn">View Details</a>
                 </div>
             </div>
 
             <div class="recipe-card">
-                <img src="../images/guatemala.jpg" alt="Guatemala Beans">
-                <h3>Guatemala</h3>
-                <p>RM 20 / 250g</p>
+                <img src="../images/guatemala.jpg" alt="Guatemala">
+                <h3>Guatemala Antigua</h3>
+                <p class="price-tag">RM 50.00</p>
                 <div class="card-buttons">
-                    <button onclick="addToCart('Guatemala Beans', 20)">Add to Cart</button>
-                    <a href="item.html?product=Guatemala Beans" class="button secondary-btn">View Item</a>
+                    <button onclick="addToCart('Guatemala Beans', 50)">Add to Cart</button>
+                    <a href="item.html?product=Guatemala Beans" class="secondary-btn">View Details</a>
                 </div>
             </div>
 
             <div class="recipe-card">
-                <img src="../images/brazil.jpg" alt="Brazil Beans">
-                <h3>Brazil</h3>
-                <p>RM 18 / 250g</p>
+                <img src="../images/brazil.jpg" alt="Brazil">
+                <h3>Brazil Santos</h3>
+                <p class="price-tag">RM 42.00</p>
                 <div class="card-buttons">
-                    <button onclick="addToCart('Brazil Beans', 18)">Add to Cart</button>
-                    <a href="item.html?product=Brazil Beans" class="button secondary-btn">View Item</a>
+                    <button onclick="addToCart('Brazil Beans', 42)">Add to Cart</button>
+                    <a href="item.html?product=Brazil Beans" class="secondary-btn">View Details</a>
                 </div>
             </div>
         </div>

@@ -290,11 +290,20 @@ p {
 }
 
 .recipe-card {
-    background: var(--white);
-    border-radius: 20px;
-    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* This centers everything inside the card */
     text-align: center;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+.shop-temp-select {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    text-align: center;
+    text-align-last: center;
+    /* Centers the text inside the dropdown for some browsers */
 }
 
 .recipe-card img {
@@ -346,6 +355,52 @@ p {
 /* Pill Quantity Selector */
 .qty-wrapper {
     margin: 20px 0;
+}
+
+#temperature-wrapper {
+    text-align: center;
+    /* Centers the "Select Temperature" label */
+}
+
+/* THE WRAPPER (To keep them centered) */
+.temp-pills {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    /* Space between Hot and Iced */
+    margin: 20px 0;
+}
+
+/* THE CONTAINER (Hides the radio dot) */
+.pill-container input {
+    display: none;
+    /* Completely hides the default browser circle */
+}
+
+/* THE WORD ITSELF (Default State) */
+.pill {
+    color: var(--inkwell) !important;
+    /* Default is Inkwell */
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    background: none !important;
+    /* Forces no background */
+    border: none !important;
+    /* Forces no border */
+}
+
+/* THE SELECTED STATE (Turns Creme) */
+.pill-container input:checked+.pill {
+    color: var(--creme) !important;
+    /* Only the selected one turns Creme */
+}
+
+/* HOVER EFFECT */
+.pill:hover {
+    opacity: 0.8;
 }
 
 /* ========== REFINED QUANTITY SELECTOR ========== */
@@ -994,4 +1049,255 @@ footer p {
 /* Ensure the detail card has enough space */
 .item-detail {
     margin-top: 40px;
+}
+
+/* UNIFIED MINIMALIST DROPDOWN (Shop & Item Page) */
+.shop-temp-select,
+#item-temp {
+    background-color: transparent !important;
+    color: var(--inkwell) !important;
+    /* Default word color */
+
+    /* THE LINE: Transparent by default, turns Creme when chosen/active */
+    border: none !important;
+    border-bottom: 2px solid transparent !important;
+    border-radius: 0;
+
+    padding: 5px 30px 5px 5px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    outline: none;
+
+    /* CUSTOM CHEVRON (Inkwell) */
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%231b263b%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 5px center;
+    background-size: 12px auto;
+
+    transition: all 0.3s ease;
+}
+
+#temperature-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 20px 0;
+}
+
+/* Hover State: Turns to Inkwell */
+.shop-temp-select:hover,
+#item-temp:hover,
+#item-temp:focus,
+#item-temp:active {
+    color: var(--creme) !important;
+    /* Word turns Creme */
+    border-bottom: 2px solid var(--creme) !important;
+    /* Line appears in Creme */
+
+    /* Arrow turns Creme too */
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23c9a66b%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%3E%3C/polyline%3E%3C/svg%3E");
+}
+
+/* Browser-level menu (Still needs a dark background so you can read the white text) */
+.shop-temp-select option,
+#item-temp option {
+    background-color: #ffffff;
+    color: var(--inkwell);
+    padding: 10px;
+}
+
+/* 2. SHARED BUTTONS (For Shop & Item Page) */
+.card-buttons button,
+.item-page-button {
+    background-color: var(--creme);
+    color: #1a1a1a;
+    border-radius: 12px;
+    padding: 12px;
+    border: none;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.secondary-btn {
+    background-color: #1a1a1a !important;
+    color: var(--light) !important;
+    width: 100%;
+    max-width: 180px;
+    padding: 12px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    text-align: center;
+}
+
+.secondary-btn:hover {
+    border-color: var(--creme);
+}
+
+/* 2. BUTTONS (The "Stars" of the card) */
+.card-buttons button {
+    background-color: #c9a66b;
+    /* The main CTA color */
+    color: #1a1a1a;
+    width: 100%;
+    max-width: 180px;
+    padding: 12px;
+    border-radius: 12px;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.secondary-btn {
+    background-color: #1a1a1a !important;
+    /* Solid black for contrast */
+    color: #f4f1ea !important;
+    width: 100%;
+    max-width: 180px;
+    padding: 12px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    text-align: center;
+    border: 1px solid #333;
+    display: block;
+}
+
+/* 2. BUTTONS (Keeping them the Priority) */
+.card-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    align-items: center;
+}
+
+/* Primary "Add to Cart" */
+.card-buttons button {
+    background-color: #c9a66b;
+    color: #1a1a1a;
+    width: 100%;
+    max-width: 180px;
+    padding: 12px;
+    border-radius: 12px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+}
+
+/* Secondary "View Details" */
+.secondary-btn {
+    background-color: #333 !important;
+    color: #f4f1ea !important;
+    width: 100%;
+    max-width: 180px;
+    padding: 12px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    text-align: center;
+}
+
+/* 2. PRODUCT CARDS (Rounder) */
+.recipe-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    /* ROUNDER */
+    background: rgba(255, 255, 255, 0.03);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.recipe-card img {
+    border-radius: 8px;
+    /* Slightly round images too */
+    margin-bottom: 15px;
+}
+
+.recipe-card:hover {
+    transform: translateY(-5px);
+    border-color: #c9a66b;
+}
+
+.price-tag {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #c9a66b;
+    margin: 10px 0;
+}
+
+/* 3. BUTTONS (Rounder & High Visibility) */
+.card-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    align-items: center;
+}
+
+.card-buttons button,
+.secondary-btn {
+    width: 100%;
+    max-width: 180px;
+    padding: 12px;
+    border-radius: 12px;
+    /* ROUNDER */
+    font-size: 0.85rem;
+    text-align: center;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: 600;
+    border: none;
+    transition: opacity 0.2s, background-color 0.2s;
+}
+
+/* Add to Cart Button */
+.card-buttons button {
+    background-color: #c9a66b;
+    color: #1a1a1a;
+}
+
+/* View Details Button (Solid Dark) */
+.secondary-btn {
+    background-color: #333 !important;
+    color: #f4f1ea !important;
+    text-decoration: none;
+    display: block;
+}
+
+.card-buttons button:hover,
+.secondary-btn:hover {
+    opacity: 0.9;
+    background-color: #444;
+}
+
+#item-qty {
+    color: var(--inkwell) !important;
+    /* This ensures the color applies even if the input is readonly */
+    -webkit-text-fill-color: var(--inkwell);
+}
+
+.item-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Centers the quantity and the Add to Bag button */
+    gap: 20px;
+    width: 100%;
+}
+
+#item-qty {
+    color: var(--inkwell) !important;
+    -webkit-text-fill-color: var(--inkwell);
+    text-align: center;
+    /* Ensures the number is in the middle of the input */
 }
